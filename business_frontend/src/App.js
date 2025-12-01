@@ -1,12 +1,22 @@
+import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Login from "./pages/Login";
+import SellerDashboard from "./pages/SellerDashboard";
+import BuyerDashboard from "./pages/BuyerDashboard";
+import HelpDeskDashboard from "./pages/HelpDeskDashboard";
 
-export default function App() {
+function App() {
     return (
         <Router>
             <Routes>
+                {/* default route shows the login page */}
                 <Route path="/" element={<Login />} />
+                <Route path="/seller" element={<SellerDashboard />} />
+                <Route path="/buyer" element={<BuyerDashboard />} />
+                <Route path="/helpdesk" element={<HelpDeskDashboard />} />
             </Routes>
         </Router>
     );
 }
+
+export default App;

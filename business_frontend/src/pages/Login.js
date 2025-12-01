@@ -8,19 +8,24 @@ export default function Login() {
     const [error, setError] = useState("");
     const navigate = useNavigate();
 
-    const handleSubmit = async e => {
-        e.preventDefault();
-        try {
-            const res = await axios.post("/api/login", { email, password });
-            const { role } = res.data;
-            if (role === "Seller") navigate("/seller");
-            else if (role === "Buyer") navigate("/buyer");
-            else if (role === "HelpDesk") navigate("/helpdesk");
-            else setError("Unknown role");
-        } catch (err) {
-            setError("Invalid credentials");
+    const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+        const res = await axios.post("http://localhost:5000/login", {
+            email,
+            password,
+        });
+
+        if (res.data.success) {
+            alert(`Welcome! Logged in as ${res.data.role}`);
+            //  redirect to a route for that role
+        } else {
+            setError(res.data.message || "Login failed");
         }
-    };
+    } catch (err) {
+        setError("Server error, please try again.");
+    }
+};
 
     return (
         <div className="login-container">
