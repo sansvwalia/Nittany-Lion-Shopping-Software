@@ -4,13 +4,15 @@ import os
 
 print("Starting directory:", os.getcwd())
 
-# Move into CSV folder
-os.chdir("CSVDataset")
-print("Now in:", os.getcwd())
+
 
 db_file = "NLionBusiness.db"
 conn = sqlite3.connect(db_file)
 cursor = conn.cursor()
+
+# Move into CSV folder
+os.chdir("csv_files")
+print("Now in:", os.getcwd())
 
 # ---------------------------
 # CREATE TABLES
@@ -32,8 +34,7 @@ CREATE TABLE IF NOT EXISTS Tag(
 
 cursor.execute("""
 CREATE TABLE IF NOT EXISTS Registered_User(
-    UserID INTEGER PRIMARY KEY,
-    Email TEXT,
+    Email TEXT PRIMARY KEY,
     Password TEXT
 )
 """)
@@ -49,10 +50,8 @@ CREATE TABLE IF NOT EXISTS Business(
 
 cursor.execute("""
 CREATE TABLE IF NOT EXISTS Buyer(
-    BuyerID INTEGER PRIMARY KEY,
+    BuyerEmail TEXT PRIMARY KEY,
     StreetAddress TEXT,
-    Email TEXT,
-    Password TEXT,
     FName TEXT,
     LName TEXT,
     RegistrationDate TEXT
@@ -61,7 +60,7 @@ CREATE TABLE IF NOT EXISTS Buyer(
 
 cursor.execute("""
 CREATE TABLE IF NOT EXISTS Help_Desk(
-    HelpDeskID INTEGER PRIMARY KEY,
+    HelpDeskEmail TEXT PRIMARY KEY,
     PhoneNumber TEXT
 )
 """)
@@ -71,8 +70,8 @@ CREATE TABLE IF NOT EXISTS "Transaction"(
     TransactionID INTEGER PRIMARY KEY,
     Transaction_Date TEXT,
     Total REAL,
-    BuyerID INTEGER,
-    FOREIGN KEY (BuyerID) REFERENCES Buyer(BuyerID)
+    BuyerEmail TEXT,
+    FOREIGN KEY (BuyerEmail) REFERENCES Buyer(BuyerEmail)
 )
 """)
 
@@ -91,7 +90,8 @@ CREATE TABLE IF NOT EXISTS Credit_Cards(
     expire_month TEXT,
     expire_year INTEGER,
     security_code TEXT,
-    owner_email TEXT
+    owner_email TEXT NOT NULL,
+    FOREIGN KEY (owner_email) REFERENCES Registered_User(email)
 )
 """)
 
@@ -103,6 +103,7 @@ CREATE TABLE IF NOT EXISTS Product(
     Quantity INTEGER,
     TagID INTEGER,
     CategoryID INTEGER,
+    Price REAL,
     FOREIGN KEY (TagID) REFERENCES Tag(TagID),
     FOREIGN KEY (CategoryID) REFERENCES Category(CategoryID)
 )
@@ -110,11 +111,10 @@ CREATE TABLE IF NOT EXISTS Product(
 
 cursor.execute("""
 CREATE TABLE IF NOT EXISTS Seller(
-    SellerID INTEGER PRIMARY KEY,
     BusinessID INTEGER,
-    UserID INTEGER,
+    UserEmail TEXT PRIMARY KEY,
     FOREIGN KEY (BusinessID) REFERENCES Business(BusinessID),
-    FOREIGN KEY (UserID) REFERENCES Registered_User(UserID)
+    FOREIGN KEY (UserEmail) REFERENCES Registered_User(Email)
 )
 """)
 
@@ -136,10 +136,10 @@ CREATE TABLE IF NOT EXISTS Ticket(
     Date_Opened TEXT,
     Description TEXT,
     Status TEXT,
-    UserID INTEGER,
-    HelpDeskID INTEGER,
-    FOREIGN KEY (UserID) REFERENCES Registered_User(UserID),
-    FOREIGN KEY (HelpDeskID) REFERENCES Help_Desk(HelpDeskID)
+    UserEmail TEXT NOT NULL,
+    HelpDeskEmail TEXT NOT NULL,
+    FOREIGN KEY (UserEmail) REFERENCES Registered_User(Email),
+    FOREIGN KEY (HelpDeskEmail) REFERENCES Help_Desk(HelpDeskEmail)
 )
 """)
 
@@ -161,9 +161,9 @@ CREATE TABLE IF NOT EXISTS Review(
     DateCreated TEXT,
     Text TEXT,
     ProductID INTEGER,
-    BuyerID INTEGER,
+    BuyerEmail TEXT,
     FOREIGN KEY (ProductID) REFERENCES Product(ProductID),
-    FOREIGN KEY (BuyerID) REFERENCES Buyer(BuyerID)
+    FOREIGN KEY (BuyerEmail) REFERENCES Buyer(BuyerEmail)
 )
 """)
 
@@ -216,7 +216,7 @@ import_csv("Seller", "Seller.csv")
 
 import_csv("Buyer", "Buyer.csv")
 import_csv("Product", "Product.csv")
-import_csv("Product_Price", "Product_Price.csv")
+
 
 import_csv('"Transaction"', "Transaction.csv")
 import_csv("Orders", "Orders.csv")
