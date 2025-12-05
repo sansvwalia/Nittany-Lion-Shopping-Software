@@ -6,6 +6,11 @@
     background-color: #f5f7fa;
     text-align: center;
 }
+
+body, html {
+    overflow-x: hidden;
+}
+
 main {
     flex: 1;
     display: flex;
@@ -15,14 +20,15 @@ main {
 
 /* Header */
 .App-header {
-    background-color: #041E42; /* PSU Navy Blue */
-    color: #FFFFFF;
-    width: 100%;
+    background-color: #041E42;
+    color: white;
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
     padding: 30px 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 

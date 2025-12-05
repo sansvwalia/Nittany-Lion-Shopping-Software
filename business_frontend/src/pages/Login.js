@@ -31,7 +31,6 @@ export default function Login() {
         <div className="App">
             <header className="App-header">
                 <h1>Nittany Business</h1>
-                <p style={{ fontSize: "1rem", marginTop: "5px" }}>User Login Page</p>
             </header>
 
             <main>
