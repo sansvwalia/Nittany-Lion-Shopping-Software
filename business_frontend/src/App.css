@@ -1,11 +1,16 @@
 /* Core layout */
 .App {
-    text-align: center;
-    background-color: #f5f7fa; /* light neutral base */
-    min-height: 100vh;
     display: flex;
     flex-direction: column;
+    min-height: 100vh;
+    background-color: #f5f7fa;
+    text-align: center;
+}
+main {
+    flex: 1;
+    display: flex;
     align-items: center;
+    justify-content: center;
 }
 
 /* Header */
@@ -59,13 +64,12 @@ body {
 
 /* Footer */
 .App-footer {
-    background-color: #000000;
-    color: #ffffff;
-    padding: 20px;
+    background-color: #000;
+    color: #fff;
+    padding: 15px;
     width: 100%;
     text-align: center;
     font-size: 0.9em;
-    opacity: 0.9;
 }
 
 /* Login Page Styling */
