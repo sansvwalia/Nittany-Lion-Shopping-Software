@@ -1,0 +1,2 @@
+TicketID,Topic,Date_Opened,Description,Status,UserEmail,HelpDeskEmail
+1,Order Issue,2024-02-05,Package delayed,Open,alice@example.com,help@shop.com
