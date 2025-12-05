@@ -1,5 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import './App.css';
 import Login from "./pages/Login";
 import SellerDashboard from "./pages/SellerDashboard";
 import BuyerDashboard from "./pages/BuyerDashboard";
@@ -9,7 +10,6 @@ function App() {
     return (
         <Router>
             <Routes>
-                {/* default route shows the login page */}
                 <Route path="/" element={<Login />} />
                 <Route path="/seller" element={<SellerDashboard />} />
                 <Route path="/buyer" element={<BuyerDashboard />} />
