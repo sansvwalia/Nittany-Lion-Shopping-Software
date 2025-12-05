@@ -1,4 +1,3 @@
-/* Core layout */
 .App {
     display: flex;
     flex-direction: column;
@@ -18,7 +17,6 @@ main {
     justify-content: center;
 }
 
-/* Header */
 .App-header {
     background-color: #041E42;
     color: white;
@@ -32,7 +30,6 @@ main {
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 
-/* Logo */
 .App-logo {
     height: 40vmin;
     pointer-events: none;
@@ -44,7 +41,6 @@ main {
     }
 }
 
-/* Body text */
 body {
     margin: 0;
     font-family: 'Inter', 'Arial', sans-serif;
@@ -52,7 +48,6 @@ body {
     background-color: #f5f7fa;
 }
 
-/* Buttons - PSU style */
 .button {
     background-color: #041E42;
     color: white;
@@ -65,10 +60,10 @@ body {
 }
 
 .button:hover {
-    background-color: #0b2e66; /* slightly lighter navy */
+    background-color: #0b2e66;
 }
 
-/* Footer */
+
 .App-footer {
     background-color: #000;
     color: #fff;
@@ -78,13 +73,12 @@ body {
     font-size: 0.9em;
 }
 
-/* Login Page Styling */
 .login-container {
-    background-color: #ffffff; /* clean card look */
-    color: #041E42; /* PSU navy text */
+    background-color: #ffffff;
+    color: #041E42;
     padding: 40px;
     border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* slight depth */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
     max-width: 400px;
     width: 90%;
     margin: 60px auto;
