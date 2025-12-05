@@ -19,6 +19,7 @@ function App() {
                 <Route path="/helpdesk" element={<HelpDeskDashboard />} />
                 <Route path="/register" element={<Register />} />
                 <Route path ="/registerUser" element={<RegisterUser/>} />
+                <Route path ="/registerSeller" element={<RegisterSeller/>} />
             </Routes>
         </Router>
     );
