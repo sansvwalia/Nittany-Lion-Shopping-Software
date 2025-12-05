@@ -105,6 +105,14 @@ body {
     transition: border-color 0.3s ease;
 }
 
+.login-container select {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+}
+
 .login-container input:focus {
     border-color: #041E42;
     outline: none;
@@ -129,6 +137,21 @@ body {
     color: #b30000;
     margin-top: 15px;
     font-size: 0.9em;
+}
+.register-link {
+      margin-top: 20px;
+    font-size: 0.95em;
+    color: #041E42;
+}
+
+.register-link span {
+    color: #0b2e66;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.register-link span:hover {
+    text-decoration: underline;
 }
 
 /* Logo Spin */

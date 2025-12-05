@@ -5,6 +5,9 @@ import Login from "./pages/Login";
 import SellerDashboard from "./pages/SellerDashboard";
 import BuyerDashboard from "./pages/BuyerDashboard";
 import HelpDeskDashboard from "./pages/HelpDeskDashboard";
+import Register from "./pages/Register";
+import RegisterUser from "./pages/RegisterUser";
+import RegisterSeller from "./pages/RegisterSeller"
 
 function App() {
     return (
@@ -14,6 +17,8 @@ function App() {
                 <Route path="/seller" element={<SellerDashboard />} />
                 <Route path="/buyer" element={<BuyerDashboard />} />
                 <Route path="/helpdesk" element={<HelpDeskDashboard />} />
+                <Route path="/register" element={<Register />} />
+                <Route path ="/registerUser" element={<RegisterUser/>} />
             </Routes>
         </Router>
     );
