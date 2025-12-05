@@ -61,7 +61,8 @@ CREATE TABLE IF NOT EXISTS Buyer(
 cursor.execute("""
 CREATE TABLE IF NOT EXISTS Help_Desk(
     HelpDeskEmail TEXT PRIMARY KEY,
-    PhoneNumber TEXT
+    PhoneNumber TEXT,
+    FORIEGN KEY HelpDeskEmail REFERENCES Registered_User(Email)
 )
 """)
 
