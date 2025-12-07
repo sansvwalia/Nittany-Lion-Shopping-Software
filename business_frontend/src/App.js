@@ -12,6 +12,7 @@ import UsersListPage from "./pages/UsersListPage";
 import TicketsListPage from "./pages/TicketsListPage";
 import SellersListPage from "./pages/SellersListPage";
 import ProductsListPage from "./pages/ProductsListPage";
+import HelpDeskListPage from "./pages/HelpDeskListPage";
 
 function App() {
     return (
@@ -28,6 +29,7 @@ function App() {
                 <Route path="/userslist" element={<UsersListPage />} />
                 <Route path="/sellerslist" element={<SellersListPage />} />
                 <Route path="/productslist" element={<ProductsListPage />} />
+                <Route path ="/helpdesklist" element={<HelpDeskListPage />} />
             </Routes>
         </Router>
     );
