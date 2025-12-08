@@ -40,7 +40,7 @@ export default function SellerDashboard() {
             <div className="seller-content">
                 <p>Manage your listings and contact support anytime.</p>
 
-                {/* 🧾 Product Listings */}
+                {/* Product Listings */}
                 <section className="product-list">
                     <h2>Your Listings</h2>
                     {products.map((p) => (
@@ -69,7 +69,7 @@ export default function SellerDashboard() {
                     ))}
                 </section>
 
-                {/* 📦 Order History */}
+                {/* Order History */}
                 <section className="order-history">
                     <h2>Order History</h2>
                     {orders.map((o) => (
@@ -83,7 +83,7 @@ export default function SellerDashboard() {
                 </section>
             </div>
 
-            {/* ➕ Create Listing Button */}
+            {/* Create Listing Button */}
             <div
                 className="tooltip"
                 style={{
@@ -116,7 +116,7 @@ export default function SellerDashboard() {
             </Modal>
         </main>
 
-        {/* ❓ Helpdesk Button */}
+        {/* Helpdesk Button */}
         <div
             className="tooltip"
             style={{
