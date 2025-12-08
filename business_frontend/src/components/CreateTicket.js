@@ -19,7 +19,7 @@ export default function CreateTicket({ onSubmit }) {
     }
 
     return (
-        <div className="login-container">
+        <div style={{ textAlign: "center" }}>
             <h2>Create Support Ticket</h2>
             <form onSubmit={handleSubmit}>
                 <input

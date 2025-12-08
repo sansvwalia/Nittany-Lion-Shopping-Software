@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import CreateTicket from "../components/CreateTicket";
 import Modal from "../components/Modal";
-import "../App.css";
+import "../App.css"; // brings in your button + layout styles
 
 export default function SellerDashboard() {
     const [showTicketForm, setShowTicketForm] = useState(false);
@@ -17,9 +17,10 @@ export default function SellerDashboard() {
 
             <main>
                 <h2>Welcome, Seller!</h2>
-                <p>Manage your listings and connect with support easily.</p>
+                <p>Manage your listings and contact support anytime.</p>
             </main>
 
+            {/* Floating helpdesk button */}
             <button
                 className="button"
                 style={{
@@ -31,7 +32,8 @@ export default function SellerDashboard() {
                     height: "60px",
                     fontSize: "1.5em",
                 }}
-                onClick={() => setShowTicketForm(true)}>
+                onClick={() => setShowTicketForm(true)}
+            >
                 ?
             </button>
 
