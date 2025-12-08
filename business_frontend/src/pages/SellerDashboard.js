@@ -2,11 +2,30 @@ import React, { useState } from "react";
 import CreateTicket from "../components/CreateTicket";
 import Modal from "../components/Modal";
 import CreateListing from "../components/CreateListing";
+import EditListing from "../components/EditListing"
 import "../App.css";
 
 export default function SellerDashboard() {
     const [showListingForm, setShowListingForm] = useState(false);
     const [showTicketForm, setShowTicketForm] = useState(false);
+    const [editingListing, setEditingListing] = useState(null);
+    const [showDeleteConfirm, setShowDeleteConfirm] = useState(false);
+    const [selectedListing, setSelectedListing] = useState(null);
+
+    // Temp data for testing
+    const [products] = useState([
+        { id: 1, title: "Wireless Mouse", price: 25.99, quantity: 14 },
+        { id: 2, title: "Gaming Keyboard", price: 89.99, quantity: 7 },
+    ]);
+
+    const [orders] = useState([
+        { id: 101, productTitle: "Wireless Mouse", buyerName: "Jane Doe", total: 25.99 },
+        { id: 102, productTitle: "Gaming Keyboard", buyerName: "Alex Smith", total: 89.99 },
+        { id: 103, productTitle: "Gaming Keyboard", buyerName: "Alex Smith", total: 89.99 },
+        { id: 104, productTitle: "Gaming Keyboard", buyerName: "Alex Smith", total: 89.99 },
+        { id: 105, productTitle: "Gaming Keyboard", buyerName: "Alex Smith", total: 89.99 },
+        { id: 106, productTitle: "Gaming Keyboard", buyerName: "Alex Smith", total: 89.99 },
+    ]);
 
     function handleTicketSubmit(data) {
         console.log("Ticket submitted:", data); // TODO: send to backend
@@ -18,9 +37,53 @@ export default function SellerDashboard() {
         <header className="App-header">Seller Dashboard</header>
 
         <main>
-            <h2>Welcome, Seller!</h2>
-            <p>Manage your listings and contact support anytime.</p>
+            <div className="seller-content">
+                <p>Manage your listings and contact support anytime.</p>
 
+                {/* 🧾 Product Listings */}
+                <section className="product-list">
+                    <h2>Your Listings</h2>
+                    {products.map((p) => (
+                        <div key={p.id} className="product-card">
+                            <h3>{p.title}</h3>
+                            <p>${p.price} | Qty: {p.quantity}</p>
+                            <div>
+                                <button
+                                    className="button"
+                                    onClick={() => setEditingListing(p)}
+                                >
+                                    Edit
+                                </button>
+                                <button
+                                    className="button"
+                                    style={{ backgroundColor: "#b30000" }}
+                                    onClick={() => {
+                                        setSelectedListing(p);
+                                        setShowDeleteConfirm(true);
+                                    }}
+                                >
+                                    Delete
+                                </button>
+                            </div>
+                        </div>
+                    ))}
+                </section>
+
+                {/* 📦 Order History */}
+                <section className="order-history">
+                    <h2>Order History</h2>
+                    {orders.map((o) => (
+                        <div key={o.id} className="order-card">
+                            <p>
+                                <strong>{o.productTitle}</strong> — bought by {o.buyerName}
+                            </p>
+                            <p>Total: ${o.total}</p>
+                        </div>
+                    ))}
+                </section>
+            </div>
+
+            {/* ➕ Create Listing Button */}
             <div
                 className="tooltip"
                 style={{
@@ -43,8 +106,7 @@ export default function SellerDashboard() {
                 </button>
                 <span className="tooltip-text">Create New Listing</span>
             </div>
-
-            <Modal show={showListingForm} onClose={() => setShowListingForm(false)}>
+                        <Modal show={showListingForm} onClose={() => setShowListingForm(false)}>
                 <CreateListing
                     onSubmit={(data) => {
                         console.log("Listing created:", data);
@@ -54,6 +116,7 @@ export default function SellerDashboard() {
             </Modal>
         </main>
 
+        {/* ❓ Helpdesk Button */}
         <div
             className="tooltip"
             style={{
@@ -77,8 +140,49 @@ export default function SellerDashboard() {
             <span className="tooltip-text">Contact Helpdesk</span>
         </div>
 
+        {/* 🎫 Ticket Modal */}
         <Modal show={showTicketForm} onClose={() => setShowTicketForm(false)}>
             <CreateTicket onSubmit={handleTicketSubmit} />
+        </Modal>
+
+        {/* ✏️ Edit Listing Modal */}
+        <Modal show={!!editingListing} onClose={() => setEditingListing(null)}>
+            {editingListing && (
+                <EditListing
+                    listing={editingListing}
+                    onSubmit={(updated) => {
+                        console.log("Edited listing:", updated);
+                        setEditingListing(null);
+                    }}
+                />
+            )}
+        </Modal>
+
+        {/* 🗑 Delete Confirmation Modal */}
+        <Modal show={showDeleteConfirm} onClose={() => setShowDeleteConfirm(false)}>
+            <div style={{ textAlign: "center" }}>
+                <h3>Confirm Deletion</h3>
+                <p>
+                    Are you sure you want to delete{" "}
+                    <strong>{selectedListing?.title}</strong>?
+                </p>
+                <button
+                    className="button"
+                    onClick={() => {
+                        console.log("Deleted listing:", selectedListing);
+                        setShowDeleteConfirm(false);
+                    }}
+                >
+                    Yes, Delete
+                </button>
+                <button
+                    className="button"
+                    style={{ backgroundColor: "#999", marginLeft: "10px" }}
+                    onClick={() => setShowDeleteConfirm(false)}
+                >
+                    Cancel
+                </button>
+            </div>
         </Modal>
     </div>
 );

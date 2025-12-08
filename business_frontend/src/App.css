@@ -268,6 +268,58 @@ body {
     overflow: visible;
 }
 
+/* Seller section */
+.seller-content {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    align-items: center;
+    width: 100%;
+}
+
+.product-list,
+.order-history {
+    background-color: #ffffff;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 25px 30px 50px;
+    width: 70%;               /* narrower and cleaner */
+    max-width: 800px;
+    margin: 0 auto 40px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+/* Product / order entries layout */
+.product-card,
+.order-card {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 25px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #ddd;
+}
+
+.product-card h3 {
+    margin: 0 0 5px;
+    color: #041E42;
+}
+
+.product-card p {
+    margin: 0 0 10px;
+}
+
+.product-card div {
+    display: flex;
+    gap: 10px; /* consistent button spacing */
+}
+
+/* Give final card a clean bottom edge */
+.product-card:last-child,
+.order-card:last-child {
+    border-bottom: none;
+}
+
 /* Logo Spin */
 @keyframes App-logo-spin {
     from {
