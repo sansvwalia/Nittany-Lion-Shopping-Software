@@ -1,5 +1,9 @@
-import { BrowserRouter as Link } from "react-router-dom";
+
+import { useNavigate } from "react-router-dom";
+
 export default function HelpDeskDashboard() {
+  const navigate = useNavigate();
+
   return (
             <div className="App">
             <header className="App-header">
@@ -7,15 +11,19 @@ export default function HelpDeskDashboard() {
                 <p>Help Desk Dashboard</p>
             </header>
 
-            <main>
-              <div className="min-h-screen bg-slate-100">
-                  <header className="bg-slate-800 text-white text-center py-6 text-3xl font-semibold">
-                  IT Staff Dashboard
-                  </header>
+            <main className="min-h-screen bg-slate-100">
+                
 
+              <div className="button-container">
+                  <button className="button" onClick={() => navigate("/dbviewer")}>
+                      Database Viewer
+                  </button>
+
+                  <button className="button" onClick={() => navigate("/recordeditor")}>
+                      Update Records
+                  </button>
               </div>
 
-              
 
             </main>
             <footer className="App-footer">
@@ -26,16 +34,4 @@ export default function HelpDeskDashboard() {
   );
 }
 
-function DashboardCard({ title, to }) {
-  return (
-    <div className="flex gap-4">
-      <Link
-        to={to}
-        className="px-6 py-3 bg-blue-600 text-white rounded-xl hover:bg-blue-700 transition"
-      >
-        {title}
-      </Link>
-    </div>
-  );
-}
 

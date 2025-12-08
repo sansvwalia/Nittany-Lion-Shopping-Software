@@ -63,6 +63,12 @@ body {
     background-color: #0b2e66;
 }
 
+.button-container {
+    display: flex;
+    flex-direction: column;   /* makes buttons vertical */
+    gap: 20px;                /* spacing between buttons */
+    align-items: center;      /* center horizontally */
+}
 
 .App-footer {
     background-color: #000;
