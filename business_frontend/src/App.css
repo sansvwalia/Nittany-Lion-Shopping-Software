@@ -17,6 +17,7 @@ main {
     justify-content: center;
 }
 
+/* General Section */
 .App-header {
     background-color: #041E42;
     color: white;
@@ -65,9 +66,9 @@ body {
 
 .button-container {
     display: flex;
-    flex-direction: column;   /* makes buttons vertical */
-    gap: 20px;                /* spacing between buttons */
-    align-items: center;      /* center horizontally */
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
 }
 
 .App-footer {
@@ -79,6 +80,7 @@ body {
     font-size: 0.9em;
 }
 
+/* Login Section */
 .login-container {
     background-color: #ffffff;
     color: #041E42;
@@ -165,6 +167,7 @@ body {
     text-decoration: underline;
 }
 
+/* Modal Section */
 .modal-overlay {
     position: fixed;
     top: 0;
@@ -215,6 +218,56 @@ body {
     justify-content: center;
     z-index: 999;
 }
+
+.modal-content form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+    align-items: stretch;
+}
+
+.modal-content h2 {
+    margin-bottom: 20px;
+    text-align: center;
+    color: #041E42;
+}
+
+.modal-content input,
+.modal-content select,
+.modal-content textarea {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Tooltip Section */
+.tooltip .tooltip-text {
+    visibility: hidden;
+    position: absolute;
+    right: 110%;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #041E42;
+    color: #fff;
+    text-align: center;
+    padding: 6px 10px;
+    border-radius: 6px;
+    opacity: 0;
+    transition: opacity 0.3s;
+    font-size: 0.85em;
+    z-index: 2000;
+    white-space: nowrap;
+}
+
+.tooltip:hover .tooltip-text {
+    visibility: visible;
+    opacity: 1;
+}
+/* prevents clipping at bottom of viewport */
+.tooltip {
+    overflow: visible;
+}
+
 /* Logo Spin */
 @keyframes App-logo-spin {
     from {
