@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 export default function DBViewerPage() {
 
@@ -24,7 +25,13 @@ export default function DBViewerPage() {
   ];
 
   return (
+    
     <div style={{ padding: "30px" }}>
+        <Link 
+        to="/helpdesk"
+        className="text-blue-600 hover:underline font-medium">
+        Return to Help Desk Dashboard
+        </Link>
       <h1>Database Viewer</h1>
 
       {/* Dropdown */}

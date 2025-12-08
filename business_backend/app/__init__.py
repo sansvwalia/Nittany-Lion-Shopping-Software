@@ -1,5 +1,5 @@
-from flask import Flask
-from .db import get_db, close_db
+from flask import Flask, request, jsonify
+from .db import get_db, close_db, get_row, update_row
 from flask_cors import CORS
 
 
@@ -43,5 +43,34 @@ def create_app():
     app.register_blueprint(review_bp, url_prefix="/review")
     app.register_blueprint(transaction_bp, url_prefix="/transaction")
     app.register_blueprint(zipcode_bp, url_prefix="/zipcode")
+
+
+    # GET one row by primary key
+    @app.route("/<table>/<pk>/", methods=["GET"])
+    def get_record(table, pk):
+        pk_name = request.args.get("pk_name", "id")  # default primary key column
+
+        row = get_row(table, pk_name, pk)
+        if not row:
+            return jsonify({"error": "Row not found"}), 404
+
+        return jsonify(row)
+    
+    
+    # UPDATE row by primary key
+    @app.route("/<table>/<pk>", methods=["PUT"])
+    def update_record(table, pk):
+        pk_name = request.args.get("pk_name", "id")
+        updated_data = request.json
+
+        success = update_row(table, pk_name, pk, updated_data)
+
+        if not success:
+            return jsonify({"error": "Update failed"}), 400
+
+        return jsonify({"success": True, "updated": updated_data})
+
+
+
 
     return app

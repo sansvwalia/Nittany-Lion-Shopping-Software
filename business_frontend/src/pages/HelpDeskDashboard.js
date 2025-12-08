@@ -8,12 +8,14 @@ export default function HelpDeskDashboard() {
             </header>
 
             <main>
-            <div className="min-h-screen bg-slate-100">
-                <header className="bg-slate-800 text-white text-center py-6 text-3xl font-semibold">
-                IT Staff Dashboard
-                </header>
+              <div className="min-h-screen bg-slate-100">
+                  <header className="bg-slate-800 text-white text-center py-6 text-3xl font-semibold">
+                  IT Staff Dashboard
+                  </header>
 
-            </div>
+              </div>
+
+              
 
             </main>
             <footer className="App-footer">
@@ -26,12 +28,14 @@ export default function HelpDeskDashboard() {
 
 function DashboardCard({ title, to }) {
   return (
-    <Link
-      to={to}
-      className="bg-white p-8 rounded-2xl shadow-lg text-center text-xl font-bold hover:scale-105 transition-transform cursor-pointer"
-    >
-      {title}
-    </Link>
+    <div className="flex gap-4">
+      <Link
+        to={to}
+        className="px-6 py-3 bg-blue-600 text-white rounded-xl hover:bg-blue-700 transition"
+      >
+        {title}
+      </Link>
+    </div>
   );
 }
 

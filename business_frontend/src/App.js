@@ -10,6 +10,7 @@ import RegisterUser from "./pages/RegisterUser";
 import RegisterSeller from "./pages/RegisterSeller"
 import ProductsListPage from "./pages/ProductsListPage";
 import DBViewerPage from "./pages/DBViewerPage";
+import EditRecord from "./pages/recordeditor";
 
 function App() {
     return (
@@ -24,6 +25,7 @@ function App() {
                 <Route path ="/registerSeller" element={<RegisterSeller/>} />
                 <Route path="/dbviewer" element={<DBViewerPage />} />
                 <Route path="/productslist" element={<ProductsListPage />} />
+                <Route path="/recordeditor" element={<EditRecord />} />
             </Routes>
         </Router>
     );
