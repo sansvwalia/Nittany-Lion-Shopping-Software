@@ -22,6 +22,10 @@ export default function HelpDeskDashboard() {
                   <button className="button" onClick={() => navigate("/recordeditor")}>
                       Update Records
                   </button>
+
+                  <button className="button" onClick={() => navigate("/productanalytics")}>
+                      Product Analytics
+                  </button>
               </div>
 
 

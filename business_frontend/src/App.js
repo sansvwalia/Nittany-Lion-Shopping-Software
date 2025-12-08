@@ -11,6 +11,7 @@ import RegisterSeller from "./pages/RegisterSeller"
 import ProductsListPage from "./pages/ProductsListPage";
 import DBViewerPage from "./pages/DBViewerPage";
 import EditRecord from "./pages/recordeditor";
+import ProductAnalytics from "./pages/ProductAnalytics";
 
 function App() {
     return (
@@ -26,6 +27,7 @@ function App() {
                 <Route path="/dbviewer" element={<DBViewerPage />} />
                 <Route path="/productslist" element={<ProductsListPage />} />
                 <Route path="/recordeditor" element={<EditRecord />} />
+                <Route path="/productanalytics" element={<ProductAnalytics />} />
             </Routes>
         </Router>
     );
