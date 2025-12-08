@@ -8,11 +8,8 @@ import HelpDeskDashboard from "./pages/HelpDeskDashboard";
 import Register from "./pages/Register";
 import RegisterUser from "./pages/RegisterUser";
 import RegisterSeller from "./pages/RegisterSeller"
-import UsersListPage from "./pages/UsersListPage";
-import TicketsListPage from "./pages/TicketsListPage";
-import SellersListPage from "./pages/SellersListPage";
 import ProductsListPage from "./pages/ProductsListPage";
-import HelpDeskListPage from "./pages/HelpDeskListPage";
+import DBViewerPage from "./pages/DBViewerPage";
 
 function App() {
     return (
@@ -25,11 +22,8 @@ function App() {
                 <Route path="/register" element={<Register />} />
                 <Route path ="/registerUser" element={<RegisterUser/>} />
                 <Route path ="/registerSeller" element={<RegisterSeller/>} />
-                <Route path="/ticketslist" element={<TicketsListPage />} />
-                <Route path="/userslist" element={<UsersListPage />} />
-                <Route path="/sellerslist" element={<SellersListPage />} />
+                <Route path="/dbviewer" element={<DBViewerPage />} />
                 <Route path="/productslist" element={<ProductsListPage />} />
-                <Route path ="/helpdesklist" element={<HelpDeskListPage />} />
             </Routes>
         </Router>
     );

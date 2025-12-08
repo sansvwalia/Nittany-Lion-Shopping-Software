@@ -1,7 +1,7 @@
 from flask import Blueprint, jsonify
 from app.db import get_db
 
-buyer_bp = Blueprint("buyer", __name__)
+buyer_bp = Blueprint("buyer_table", __name__)
 
 @buyer_bp.get("/")
 def list_buyer():

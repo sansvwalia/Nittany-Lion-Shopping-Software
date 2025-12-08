@@ -1,7 +1,7 @@
 from flask import Blueprint, jsonify
 from app.db import get_db
 
-helpdesk_bp = Blueprint("helpdesk", __name__)
+helpdesk_bp = Blueprint("helpdesk_table", __name__)
 
 @helpdesk_bp.get("/")
 def list_helpdesk():

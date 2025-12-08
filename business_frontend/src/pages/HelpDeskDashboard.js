@@ -13,13 +13,6 @@ export default function HelpDeskDashboard() {
                 IT Staff Dashboard
                 </header>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 p-10">
-                <DashboardCard title="Support Ticket History" to="/ticketslist" />
-                <DashboardCard title="User List" to="/userslist" />
-                <DashboardCard title="Vendor List" to="/sellerslist" />
-                <DashboardCard title="Product List" to="/productslist" />
-                </div>
-
             </div>
 
             </main>
