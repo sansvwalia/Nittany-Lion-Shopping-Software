@@ -49,6 +49,4 @@ def create_app():
     app.register_blueprint(generic_bp)
 
 
-
-
     return app
