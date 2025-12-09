@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import CreateTicket from "../components/CreateTicket";
 import Modal from "../components/Modal";
 import CreateListing from "../components/CreateListing";
@@ -32,14 +33,21 @@ export default function SellerDashboard() {
         setShowTicketForm(false);
     }
 
+    const navigate = useNavigate();
+
+function handleLogout() {
+    localStorage.removeItem("userToken");
+    sessionStorage.clear();
+
+    navigate("/");
+}
+
    return (
     <div className="App">
         <header className="App-header">Seller Dashboard</header>
 
         <main>
             <div className="seller-content">
-                <p>Manage your listings and contact support anytime.</p>
-
                 {/* Product Listings */}
                 <section className="product-list">
                     <h2>Your Listings</h2>
@@ -140,12 +148,36 @@ export default function SellerDashboard() {
             <span className="tooltip-text">Contact Helpdesk</span>
         </div>
 
-        {/* 🎫 Ticket Modal */}
+        <div
+            className="tooltip tooltip-left"
+            style={{
+                position: "fixed",
+                bottom: "20px",
+                left: "20px",
+            }}
+        >
+            <button
+                className="button"
+                style={{
+                    borderRadius: "50%",
+                    width: "60px",
+                    height: "60px",
+                    fontSize: "1.3em",
+                    backgroundColor: "#b30000",
+                }}
+                onClick={handleLogout}
+            >
+                ↩
+            </button>
+            <span className="tooltip-text">Sign Out</span>
+        </div>
+
+        {/* Ticket Modal */}
         <Modal show={showTicketForm} onClose={() => setShowTicketForm(false)}>
             <CreateTicket onSubmit={handleTicketSubmit} />
         </Modal>
 
-        {/* ✏️ Edit Listing Modal */}
+        {/* Edit Listing Modal */}
         <Modal show={!!editingListing} onClose={() => setEditingListing(null)}>
             {editingListing && (
                 <EditListing
@@ -158,7 +190,7 @@ export default function SellerDashboard() {
             )}
         </Modal>
 
-        {/* 🗑 Delete Confirmation Modal */}
+        {/* Delete Confirmation Modal */}
         <Modal show={showDeleteConfirm} onClose={() => setShowDeleteConfirm(false)}>
             <div style={{ textAlign: "center" }}>
                 <h3>Confirm Deletion</h3>
