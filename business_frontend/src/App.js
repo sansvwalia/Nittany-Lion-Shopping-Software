@@ -13,6 +13,7 @@ import ProductsListPage from "./pages/ProductsListPage";
 import DBViewerPage from "./pages/DBViewerPage";
 import EditRecord from "./pages/recordeditor";
 import ProductAnalytics from "./pages/ProductAnalytics";
+import SellerAnalytics from "./pages/SellerAnalytics";
 
 
 function ProtectedRoute({ allowedRoles, children }) {
@@ -40,6 +41,7 @@ function App() {
                 <Route path="/products" element={<ProductsListPage />} />
                 <Route path="/recordeditor" element={<EditRecord />} />
                 <Route path="/productanalytics" element={<ProductAnalytics />} />
+                <Route path="/selleranalytics" element={<SellerAnalytics />} />
             </Routes>
         </Router>
     );
