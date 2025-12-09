@@ -35,7 +35,6 @@ def login():
         if not user:
             return jsonify({"success": False, "message": "Invalid credentials"}), 401
 
-        # 🔍 Determine user role
         cursor.execute("SELECT * FROM Help_Desk WHERE HelpDeskEmail = ?", (email,))
         if cursor.fetchone():
             role = "helpdesk"
