@@ -28,32 +28,10 @@ function App() {
             <Routes>
                 <Route path="/" element={<Login />} />
 
-                <Route
-                    path="/seller"
-                    element={
-                        <ProtectedRoute allowedRoles={["seller", "helpdesk"]}>
-                            <SellerDashboard />
-                        </ProtectedRoute>
-                    }
-                />
-
-                <Route
-                    path="/buyer"
-                    element={
-                        <ProtectedRoute allowedRoles={["buyer", "seller", "helpdesk"]}>
-                            <BuyerDashboard />
-                        </ProtectedRoute>
-                    }
-                />
-
-                <Route
-                    path="/helpdesk"
-                    element={
-                        <ProtectedRoute allowedRoles={["helpdesk"]}>
-                                                        <HelpDeskDashboard />
-                        </ProtectedRoute>
-                    }
-                />
+               // Just for testing period
+<Route path="/seller" element={<SellerDashboard />} />
+<Route path="/buyer" element={<BuyerDashboard />} />
+<Route path="/helpdesk" element={<HelpDeskDashboard />} />
 
                 <Route path="/register" element={<Register />} />
                 <Route path="/registerUser" element={<RegisterUser />} />
