@@ -263,9 +263,23 @@ body {
     visibility: visible;
     opacity: 1;
 }
-/* prevents clipping at bottom of viewport */
+
 .tooltip {
     overflow: visible;
+}
+
+
+.tooltip .tooltip-text {
+    right: 110%;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.tooltip-left .tooltip-text {
+    left: 110%;
+    right: auto;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
 /* Seller section */
@@ -277,13 +291,24 @@ body {
     width: 100%;
 }
 
-.product-list,
+.product-list {
+    background-color: #ffffff;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 40px 30px 50px;
+    width: 70%;
+    max-width: 800px;
+    margin: 40px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
 .order-history {
     background-color: #ffffff;
     border: 1px solid #ccc;
     border-radius: 8px;
     padding: 25px 30px 50px;
-    width: 70%;               /* narrower and cleaner */
+    width: 70%;
     max-width: 800px;
     margin: 0 auto 40px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
