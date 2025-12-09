@@ -1,5 +1,5 @@
-from flask import Flask, request, jsonify
-from .db import get_db, close_db, get_row, update_row
+from flask import Flask
+from .db import close_db
 from flask_cors import CORS
 
 
@@ -25,7 +25,7 @@ def create_app():
     from .routes.orders import orders_bp
     from .routes.tag import tag_bp
     from .routes.review import review_bp
-    from .routes.transactions import transaction_bp
+    from .routes.transactions import transactions_bp
     from .routes.zipcode import zipcode_bp
     from .routes.generic import generic_bp
 
@@ -42,7 +42,7 @@ def create_app():
     app.register_blueprint(orders_bp, url_prefix="/orders")
     app.register_blueprint(tag_bp, url_prefix="/tag")
     app.register_blueprint(review_bp, url_prefix="/review")
-    app.register_blueprint(transaction_bp, url_prefix="/transaction")
+    app.register_blueprint(transactions_bp, url_prefix="/transaction")
     app.register_blueprint(zipcode_bp, url_prefix="/zipcode")
 
 
