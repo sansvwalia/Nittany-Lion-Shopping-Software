@@ -1,5 +1,7 @@
 import { useState } from "react";
+import Navigation from "../components/Navigation";
 import "../App.css";
+
 
 const orders = [
   { id: 1, item: "Laptop Sleeve", date: "2025-01-12", status: "Delivered" },
@@ -16,6 +18,7 @@ function BuyerDashboard() {
   const [section, setSection] = useState("orders");
   const [cart, setCart] = useState([]);
   const [recommended] = useState(recommendedProducts);
+
 
   // Account local state
   const [account, setAccount] = useState({
@@ -52,12 +55,7 @@ function BuyerDashboard() {
     <div className="seller-content">
 
       {/* Navigation */}
-      <div className="button-container">
-        <button className="button" onClick={() => setSection("orders")}>Orders</button>
-        <button className="button" onClick={() => setSection("recommended")}>Recommended</button>
-        <button className="button" onClick={() => setSection("cart")}>Cart ({cart.length})</button>
-        <button className="button" onClick={() => setSection("account")}>Account</button>
-      </div>
+      <Navigation setSection={setSection} cartCount={cart.length} />
 
       {/* Orders */}
       {section === "orders" && (
