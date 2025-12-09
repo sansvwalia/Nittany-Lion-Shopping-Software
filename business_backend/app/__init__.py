@@ -27,6 +27,7 @@ def create_app():
     from .routes.review import review_bp
     from .routes.transaction import transaction_bp
     from .routes.zipcode import zipcode_bp
+    from .routes.generic import generic_bp
 
     app.register_blueprint(users_bp, url_prefix="/users")
     app.register_blueprint(products_bp, url_prefix="/products")
@@ -44,31 +45,8 @@ def create_app():
     app.register_blueprint(transaction_bp, url_prefix="/transaction")
     app.register_blueprint(zipcode_bp, url_prefix="/zipcode")
 
-
-    # GET one row by primary key
-    @app.route("/<table>/<pk>/", methods=["GET"])
-    def get_record(table, pk):
-        pk_name = request.args.get("pk_name", "id")  # default primary key column
-
-        row = get_row(table, pk_name, pk)
-        if not row:
-            return jsonify({"error": "Row not found"}), 404
-
-        return jsonify(row)
     
-    
-    # UPDATE row by primary key
-    @app.route("/<table>/<pk>", methods=["PUT"])
-    def update_record(table, pk):
-        pk_name = request.args.get("pk_name", "id")
-        updated_data = request.json
-
-        success = update_row(table, pk_name, pk, updated_data)
-
-        if not success:
-            return jsonify({"error": "Update failed"}), 400
-
-        return jsonify({"success": True, "updated": updated_data})
+    app.register_blueprint(generic_bp)
 
 
 
