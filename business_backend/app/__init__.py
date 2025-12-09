@@ -45,10 +45,8 @@ def create_app():
     app.register_blueprint(transaction_bp, url_prefix="/transaction")
     app.register_blueprint(zipcode_bp, url_prefix="/zipcode")
 
-    
+
     app.register_blueprint(generic_bp)
-
-
 
 
     return app
