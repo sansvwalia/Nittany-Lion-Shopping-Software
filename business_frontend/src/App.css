@@ -367,6 +367,10 @@ body {
     min-width: 120px;
 }
 
+.tooltip {
+    transition: bottom 0.3s ease;
+}
+
 /* Logo Spin */
 @keyframes App-logo-spin {
     from {

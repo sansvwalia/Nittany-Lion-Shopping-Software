@@ -4,28 +4,31 @@ import "../App.css";
 
 export default function DashboardSwitcher() {
     const navigate = useNavigate();
-    const currentRole = localStorage.getItem("userRole");
 
     function handleSwitch() {
-        if (currentRole === "seller") {
-            localStorage.setItem("userRole", "buyer");
-            navigate("/buyer");
-        } else {
-            localStorage.setItem("userRole", "seller");
-            navigate("/seller");
-        }
-    }
+    let role = localStorage.getItem("userRole");
+    if (role) role = role.replace(/['"\s]/g, "").toLowerCase();
 
-    const bottomPosition = currentRole === "buyer" ? "100px" : "180px";
+    console.log("switch clicked – current role:", role);
+    if (role === "seller" || role === "helpdesk") {
+        localStorage.setItem("userRole", "buyer");
+        navigate("/buyer", { replace: true });
+    } else {
+        localStorage.setItem("userRole", "seller");
+        navigate("/seller", { replace: true });
+    }
+}
+
+    const bottomPosition = "100px";
 
     return (
         <div
             className="tooltip"
             style={{
                 position: "fixed",
-                bottom: bottomPosition,
                 right: "20px",
-                zIndex: 1500,
+                bottom: bottomPosition,
+                zIndex: 5000,
             }}
         >
             <button
@@ -42,9 +45,7 @@ export default function DashboardSwitcher() {
                 ⇆
             </button>
             <span className="tooltip-text">
-                {currentRole === "seller"
-                    ? "Switch to Buyer Dashboard"
-                    : "Switch to Seller Dashboard"}
+                Switch Dashboard
             </span>
         </div>
     );

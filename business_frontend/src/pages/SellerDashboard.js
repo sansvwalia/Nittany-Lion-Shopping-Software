@@ -14,7 +14,7 @@ export default function SellerDashboard() {
         const checkAccess = async () => {
             const email = localStorage.getItem("userEmail");
             if (!email) {
-                navigate("/noaccess");
+                navigate("/noselleraccess");
                 return;
             }
 
