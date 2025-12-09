@@ -2,7 +2,6 @@ import React, { useState } from "react";
 
 export default function CreateTicket({ onSubmit }) {
     const [formData, setFormData] = useState({
-        subject: "",
         description: "",
         category: "General",
         businessName: "",
@@ -27,9 +26,8 @@ export default function CreateTicket({ onSubmit }) {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({
-                    topic: formData.subject,
-                    description: formData.description,
                     category: formData.category,
+                    description: formData.description,
                     userEmail: localStorage.getItem("userEmail"),
                     businessName: formData.businessName || null,
                     customerPhone: formData.customerPhone || null,
@@ -42,7 +40,6 @@ export default function CreateTicket({ onSubmit }) {
             if (res.ok && data.success) {
                 setSuccess("Ticket created successfully!");
                 setFormData({
-                    subject: "",
                     description: "",
                     category: "General",
                     businessName: "",
@@ -61,18 +58,14 @@ export default function CreateTicket({ onSubmit }) {
 
     return (
         <div style={{ textAlign: "center" }}>
-            <h2>Create Support Ticket</h2>
-                        <form onSubmit={handleSubmit}>
-                <input
-                    type="text"
-                    name="subject"
-                    placeholder="Ticket Subject"
-                    value={formData.subject}
+                        <h2>Create Support Ticket</h2>
+            <form onSubmit={handleSubmit}>
+                <select
+                    name="category"
+                    value={formData.category}
                     onChange={handleChange}
                     required
-                />
-
-                <select name="category" value={formData.category} onChange={handleChange}>
+                >
                     <option>General</option>
                     <option>Register Business</option>
                     <option>Technical Issue</option>
@@ -80,7 +73,7 @@ export default function CreateTicket({ onSubmit }) {
                     <option>Order</option>
                 </select>
 
-                {/* Extra fields only for Register Business */}
+                {/* Extra business fields for “Register Business” */}
                 {formData.category === "Register Business" && (
                     <>
                         <input
