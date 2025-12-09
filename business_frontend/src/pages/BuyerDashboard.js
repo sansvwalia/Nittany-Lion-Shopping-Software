@@ -200,6 +200,9 @@ function BuyerDashboard() {
                 </button>
                 <span className="tooltip-text">Contact Helpdesk</span>
             </div>
+             <Modal show={showTicketForm} onClose={() => setShowTicketForm(false)}>
+                    <CreateTicket onSubmit={() => setShowTicketForm(false)} />
+             </Modal>
 
       {/* Sign out - moved below modal so it’s always visible */}
         <div
