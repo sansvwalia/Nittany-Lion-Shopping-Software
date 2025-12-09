@@ -1,11 +1,3 @@
-<<<<<<< HEAD
-import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
-import "../App.css";
-
-export default function SellerDashboard() {
-    return <h2>Welcome, Buyer!</h2>;
-=======
 import { useState } from "react";
 import "../App.css";
 
@@ -180,7 +172,6 @@ function BuyerDashboard() {
 
     </div>
   );
->>>>>>> MidReviewSubmission
 }
 
 export default BuyerDashboard;
