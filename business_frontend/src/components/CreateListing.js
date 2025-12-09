@@ -16,25 +16,46 @@ export default function CreateListing({ onSubmit }) {
         setError("");
     };
 
-   const handleSubmit = (e) => {
+   async function handleSubmit(e) {
     e.preventDefault();
 
-	// Temporary category check
-    const validCategories = ["Electronics", "Apparel", "Books", "Furniture"];
-    const userCategory = form.category.trim().toLowerCase();
-    const isValid = validCategories.some(
-        (cat) => cat.toLowerCase() === userCategory
-    );
+    const payload = {
+        name: form.title,
+        description: form.description,
+        quantity: form.quantity,
+        price: form.price,
+        categoryID: form.category || 1, // use your current default value
+        tagID: null,
+        businessID: localStorage.getItem("businessID"), // or set when seller logs in
+    };
 
-    if (!isValid) {
-        setError("Category does not exist. Please contact Helpdesk to create it.");
-        return;
+    try {
+        const res = await fetch("http://localhost:5000/products/create", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(payload),
+        });
+
+        const data = await res.json();
+
+        if (res.ok && data.success) {
+            alert("Listing created successfully!");
+            onSubmit(payload);
+            setForm({
+                title: "",
+                description: "",
+                category: "",
+                price: "",
+                quantity: "",
+            });
+        } else {
+            alert(data.error || "Failed to create listing.");
+        }
+    } catch (err) {
+        console.error("Create listing error:", err);
+        alert("Server error — please try again later.");
     }
-
-    onSubmit?.(form);
-    setForm({ title: "", description: "", category: "", price: "", quantity: "" });
-};
-
+}
     return (
         <div>
             <h2>Create New Product Listing</h2>
