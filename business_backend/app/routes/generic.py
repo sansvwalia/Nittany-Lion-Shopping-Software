@@ -1,5 +1,5 @@
 from flask import Blueprint, jsonify, request
-from app.db import get_row, update_row
+from app.db import get_row, update_row, insert_row, delete_row, get_table_columns, get_tables
 
 generic_bp = Blueprint("generic", __name__, url_prefix="/")
 
@@ -27,3 +27,42 @@ def update_record(table, pk):
         return jsonify({"error": "Update failed"}), 400
 
     return jsonify({"success": True, "updated": updated_data})
+
+# INSERT new row into a table
+@generic_bp.post("/<table>")
+def insert_record(table):
+    new_data = request.json  # The JSON body sent from React
+
+    inserted_id = insert_row(table, new_data)
+
+    if inserted_id is None:
+        return jsonify({"error": "Insert failed"}), 400
+
+    return jsonify({"success": True, "id": inserted_id, "inserted": new_data}), 201
+
+# DELETE a row in a table
+@generic_bp.delete("/<table>/<pk>")
+def delete_record(table, pk):
+    pk_name = request.args.get("pk_name", "id")
+
+    success = delete_row(table, pk_name, pk)
+
+    if not success:
+        return jsonify({"error": "Delete failed"}), 400
+
+    return jsonify({"success": True, "deleted_pk": pk})
+
+
+@generic_bp.get("/columns/<table>")
+def get_columns(table):
+    columns = get_table_columns(table)
+
+    if columns is None:
+        return jsonify({"error": "Table not found"}), 404
+
+    return jsonify({"columns": columns})
+
+@generic_bp.get("/tables")
+def list_tables():
+    tables = get_tables()
+    return jsonify({"tables": tables})
