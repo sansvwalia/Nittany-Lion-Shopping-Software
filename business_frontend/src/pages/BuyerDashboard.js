@@ -1,5 +1,8 @@
 import { useState } from "react";
 import Navigation from "../components/Navigation";
+import { useNavigate } from "react-router-dom";
+import Modal from "../components/Modal";
+import CreateTicket from "../components/CreateTicket";
 import "../App.css";
 
 
@@ -15,6 +18,8 @@ const recommendedProducts = [
 ];
 
 function BuyerDashboard() {
+  const navigate = useNavigate();
+  const [showTicketForm, setShowTicketForm] = useState(false);
   const [section, setSection] = useState("orders");
   const [cart, setCart] = useState([]);
   const [recommended] = useState(recommendedProducts);
@@ -50,6 +55,14 @@ function BuyerDashboard() {
     });
     setShowEditModal(false);
   };
+
+  // Handle log out
+  function handleLogout() {
+        localStorage.removeItem("userToken");
+                sessionStorage.clear();
+        navigate("/");
+    }
+
 
   return (
     <div className="seller-content">
@@ -167,6 +180,47 @@ function BuyerDashboard() {
           </div>
         </div>
       )}
+
+      {/* Contact Helpdesk */}
+      <div
+                className="tooltip"
+                style={{ position: "fixed", bottom: "20px", right: "20px" }}
+            >
+                <button
+                    className="button"
+                    style={{
+                        borderRadius: "50%",
+                        width: "60px",
+                        height: "60px",
+                        fontSize: "1.5em",
+                    }}
+                    onClick={() => setShowTicketForm(true)}
+                >
+                    ?
+                </button>
+                <span className="tooltip-text">Contact Helpdesk</span>
+            </div>
+
+      {/* Sign out - moved below modal so it’s always visible */}
+        <div
+        className="tooltip tooltip-left"
+        style={{ position: "fixed", bottom: "20px", left: "20px" }}
+        >
+        <button
+            className="button"
+            style={{
+            borderRadius: "50%",
+            width: "60px",
+            height: "60px",
+            fontSize: "1.3em",
+            backgroundColor: "#b30000",
+            }}
+            onClick={handleLogout}
+        >
+            ↩
+        </button>
+        <span className="tooltip-text">Sign Out</span>
+        </div>
 
     </div>
   );
