@@ -22,7 +22,7 @@ def check_business():
         db = get_db()
         cursor = db.cursor()
         cursor.execute(
-            "SELECT * FROM business WHERE name = ? AND customer_service_number = ?",
+            "SELECT * FROM Business WHERE BusinessName = ? AND Phone = ?",
             (business_name, customer_service_number),
         )
         result = cursor.fetchone()
