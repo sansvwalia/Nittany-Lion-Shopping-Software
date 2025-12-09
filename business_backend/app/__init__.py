@@ -25,7 +25,7 @@ def create_app():
     from .routes.orders import orders_bp
     from .routes.tag import tag_bp
     from .routes.review import review_bp
-    from .routes.transaction import transaction_bp
+    from .routes.transactions import transaction_bp
     from .routes.zipcode import zipcode_bp
     from .routes.generic import generic_bp
 
