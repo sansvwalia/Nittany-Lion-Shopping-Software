@@ -1,6 +1,10 @@
-from app import create_app
+from flask import Flask
+from app.routes.business_routes import business_routes
 
-app = create_app()
+def create_app():
+    app = Flask(__name__)
 
-if __name__ == "__main__":
-    app.run(debug=True)
+    # Register blueprints
+    app.register_blueprint(business_routes)
+
+    return app
