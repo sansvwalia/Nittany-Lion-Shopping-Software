@@ -1,91 +1,121 @@
 address_id,zipcode,street_num,streetname
-1,84656,6236,noxubaqy
-2,56323,9132,fuculyvv
-3,98348,9020,kzfghgfz
-4,85081,6788,vmnogrfv
-5,79207,2447,zbvhitfs
-6,56323,9875,aepeutkj
-7,49593,2374,cxbrrnsp
-8,49593,3561,jpuuixbu
-9,73777,8123,amwptpqf
-10,60540,2183,jssqenvv
-11,98348,603,atamjxvk
-12,60540,5498,tileojbr
-13,84656,5131,kkhpvkya
-14,79207,108,buxsbfly
-15,85081,4341,xgvgtxdn
-16,98348,4297,qxyuplxy
-17,73777,3230,nydnefpz
-18,79207,6759,zcbcvsxc
-19,85081,1987,mbytddez
-20,84656,4686,xuuzcssd
-21,73777,6340,usiqnqeu
-22,56323,8833,xoxanxjn
-23,79207,1080,ltszfvaq
-24,56323,6746,shycektz
-25,79207,239,czkrtwwp
-26,79207,9580,gonkmkkb
-27,98348,4893,zawppwvl
-28,60540,6286,jskktdij
-29,56323,1708,kshgyuex
-30,73777,1514,hnzuthvk
-31,98348,5287,nsnvqfir
-32,49593,5923,xxekmjza
-33,73777,8607,jgwnbvhk
-34,60540,7142,beuugnmy
-35,56323,5815,rvrurxdf
-36,96695,8506,wegdxtks
-37,49593,7742,hpidhiwj
-38,56323,3288,gvslxrss
-39,96695,4357,mgetxtvf
-40,73777,8720,lvbfsfuh
-41,79207,1641,gsqysgdl
-42,85081,5051,ikhcgtrw
-43,79207,2383,oqjdhies
-44,30044,2626,whbcdref
-45,79207,6502,azkhsjuv
-46,96695,66,exbmfjbt
-47,98348,8338,hqxeumhf
-48,56323,4233,ntkmwjvm
-49,30044,7221,qbibqgsn
-50,79207,4789,hlbbomcx
-51,56323,9744,yrugtrac
-52,98348,5240,xusyvstu
-53,96695,6680,znumnlxy
-54,56323,1779,xvkhuxns
-55,98348,8018,epkxojdb
-56,96695,9630,iuujpkqh
-57,56323,2651,zjhlszgl
-58,49593,4815,xacmozye
-59,30044,2213,lipwziif
-60,56323,1107,cjvrfbqg
-61,73777,8248,dakhtwjj
-62,79207,7266,ghxvmpnu
-63,73777,2958,qpfdqcyg
-64,60540,324,nwcumvfm
-65,73777,2748,iihvgrin
-66,84656,354,ohdkcbhh
-67,56323,559,fvljuqpc
-68,60540,9485,zliwgdjv
-69,73777,3802,ysfuwfus
-70,30044,9714,olbmztkj
-71,73777,2259,tduyzntx
-72,60540,5880,looqfstc
-73,49593,9777,bwlcehyt
-74,60540,1508,uimfiqlx
-75,49593,9911,rpwfzjie
-76,56323,1654,qljfdzjw
-77,56323,3808,hhidovfn
-78,60540,7064,siviuqto
-79,60540,9397,wwktcayo
-80,56323,1880,hgwkhabs
-81,85081,6292,qahiujah
-82,30044,3522,qhgzwmwo
-83,56323,1104,fuszqsgd
-84,84656,7112,ckngqfev
-85,85081,6024,qmiqvqlb
-86,56323,9505,ogxspexu
-87,30044,1002,mvkbuyuc
-88,84656,3331,calisdaa
-89,96695,8243,rtkrvhcu
-90,60540,1184,inhindgr
+1,10001,123,Main St
+2,90001,45,Oak Ave
+3,60601,789,Lake Shore Dr
+4,77001,101,Pine Blvd
+5,19101,202,Elm Rd
+6,85001,303,Palm Ln
+7,78701,404,Cedar St
+8,92101,505,Spruce Way
+9,75201,606,Birch Ter
+10,33101,707,Maple Dr
+11,30301,808,Willow Ct
+12,20001,909,Cherry Aly
+13,2101,111,Federal St
+14,98101,222,Union Ave
+15,80201,333,Pearl St
+16,97201,444,Highland Dr
+17,48201,555,Grand Blvd
+18,55401,666,River Rd
+19,28201,777,Park Ln
+20,95101,888,Mountain View
+21,10001,1001,Broadway
+22,90001,1002,Sunset Blvd
+23,60601,1003,Michigan Ave
+24,77001,1004,Fannin St
+25,19101,1005,Broad St
+26,85001,1006,Central Ave
+27,78701,1007,Congress Ave
+28,92101,1008,Kettner Blvd
+29,75201,1009,Commerce St
+30,33101,1010,Biscayne Blvd
+31,30301,1011,Peachtree Rd
+32,20001,1012,L St NW
+33,2101,1013,Beacon St
+34,98101,1014,Pike Pl
+35,80201,1015,Colfax Ave
+36,97201,1016,Burnside St
+37,48201,1017,Woodward Ave
+38,55401,1018,Hennepin Ave
+39,28201,1019,Tryon St
+40,95101,1020,Market St
+41,21201,1021,E Pratt St
+42,63101,1022,Washington Ave
+43,46201,1023,Monument Cir
+44,37201,1024,Demonbreun St
+45,43201,1025,N High St
+46,89101,1026,Fremont St
+47,8601,1027,S Warren St
+48,27601,1028,Fayetteville St
+49,99501,1029,5th Ave
+50,96801,1030,Kalia Rd
+51,84101,1031,Main St
+52,68101,1032,Farnam St
+53,14201,1033,Delaware Ave
+54,15201,1034,Penn Ave
+55,53201,1035,Wisconsin Ave
+56,23219,1036,E Cary St
+57,73101,1037,Robinson Ave
+58,35201,1038,20th St S
+59,32201,1039,Bay St
+60,66101,1040,State Ave
+61,99201,1041,W Riverside Ave
+62,83701,1042,W Idaho St
+63,85701,1043,E Broadway Blvd
+64,18101,1044,Hamilton St
+65,6101,1045,Asylum St
+66,40201,1046,W Main St
+67,50301,1047,Locust St
+68,14604,1048,State St
+69,13202,1049,W Genesee St
+70,17101,1050,N 2nd St
+71,10001,1051,W 34th St
+72,90001,1052,Wilshire Blvd
+73,60601,1053,Wacker Dr
+74,77001,1054,Post Oak Blvd
+75,19101,1055,Market St
+76,85001,1056,Camelback Rd
+77,78701,1057,Guadalupe St
+78,92101,1058,El Cajon Blvd
+79,75201,1059,Ross Ave
+80,33101,1060,Ocean Dr
+81,30301,1061,Ponce de Leon Ave
+82,20001,1062,K St NW
+83,2101,1063,Newbury St
+84,98101,1064,Western Ave
+85,80201,1065,Speer Blvd
+86,97201,1066,SW 6th Ave
+87,48201,1067,Jefferson Ave
+88,55401,1068,Nicollet Mall
+89,28201,1069,Queens Rd
+90,95101,1070,Almaden Blvd
+91,21201,1071,Inner Harbor
+92,63101,1072,Laclede Ave
+93,46201,1073,Meridian St
+94,37201,1074,Broadway
+95,43201,1075,W Broad St
+96,89101,1076,Las Vegas Blvd
+97,8601,1077,E State St
+98,27601,1078,Glenwood Ave
+99,99501,1079,Northern Lights Blvd
+100,96801,1080,Ala Moana Blvd
+101,84101,1081,S Temple
+102,68101,1082,Dodge St
+103,14201,1083,Ellicott St
+104,15201,1084,Liberty Ave
+105,53201,1085,N Water St
+106,23219,1086,Shockoe Slip
+107,73101,1087,N Western Ave
+108,35201,1088,University Blvd
+109,32201,1089,Riverside Ave
+110,66101,1090,Minnesota Ave
+111,99201,1091,Monroe St
+112,83701,1092,Capitol Blvd
+113,85701,1093,N Stone Ave
+114,18101,1094,Tilghman St
+115,6101,1095,Main St
+116,40201,1096,Bardstown Rd
+117,50301,1097,Grand Ave
+118,14604,1098,East Ave
+119,13202,1099,E Washington St
+120,17101,1100,Dauphin St

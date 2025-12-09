@@ -1,31 +1,51 @@
 TicketID,Topic,Date_Opened,Description,Status,UserEmail,HelpDeskEmail
-1,jhqmzqoh,2024-03-01,ndvdhevk uouioara temithxc viaigdyz tynjrygq nslneefz,Open,hjqdvuhc@example.com,odzkatlz@example.com
-2,cgjtxbni,2024-03-01,zwbizxoc udigosyl mwaaozwu ngllnrii upflwgan oyxllako,Open,prtweflj@example.com,rbeuxdyu@example.com
-3,ttiaboqn,2024-03-01,crjkuiec lfeopkne hbweioni ohdltvni pwjlmkib llijwjkh,Open,atqfough@example.com,spvzqlix@example.com
-4,ohunfixd,2024-03-01,hgxucjyn rxkquvhf wijtsgjl iqqfxraj stnyijyh yonvwjrf,Open,fcnogklc@example.com,lyyrcnwa@example.com
-5,hxrrcvwd,2024-03-01,wipuukvt xrawelqi uuagqxif aqomgwil zfkomhei zuiygoes,Open,mrcngorh@example.com,lrmarlnb@example.com
-6,inshibxs,2024-03-01,yvfbbhrm lyehwati wvtqerav kpkcaulv jmhyzauh gjyunmgf,Open,dbbfexjw@example.com,feylwwhe@example.com
-7,uvxocevv,2024-03-01,udtkvxuw rdsldxbw kngctuit ngcqzube myeserro lsskyfqd,Open,fpbramqe@example.com,ehrnygvz@example.com
-8,dnyeiiue,2024-03-01,ekpjpphb fyvquabh oliljwqj squseexn cfimvmbk izsmiouh,Open,cmbcdlmi@example.com,lyyrcnwa@example.com
-9,leddqnwu,2024-03-01,fniixxfx yduejzce rqflsxel xamuaklu ntrbceel ejcqfjuc,Open,syitbaif@example.com,rbeuxdyu@example.com
-10,ztmtektr,2024-03-01,cvsehfjg tndngloz frfuoqtp haapxjge taaymjvz bqzcfhza,Open,pnfkpppg@example.com,odzkatlz@example.com
-11,ywvppijl,2024-03-01,fmmojnsd vouiqlho sbzuzcpm zxlfwzsh rwishwyt qozlokgf,Open,syitbaif@example.com,uujtlceo@example.com
-12,kqussbco,2024-03-01,vtwwjifb rounwvmt hbqhashy mmihkvkz lprmlrtl leyeakvm,Open,evkydtkk@example.com,lmxdnadw@example.com
-13,hztbdxmf,2024-03-01,oiqwwcdt kklshlva cwudluey fijpxyei rskvmaog vshldjsf,Open,ocouvidu@example.com,lyyrcnwa@example.com
-14,bcdgtned,2024-03-01,iuvvgodq neadmaeu fllhdmvd eapkpkis nwbvtqgt gtpxzxzf,Open,qxjjrveq@example.com,lrmarlnb@example.com
-15,rqtitwnc,2024-03-01,gusrzrqz prckekgr nwtcysgw nvrmvaxl iwloatbw zrvanovf,Open,nvgzmqar@example.com,odzkatlz@example.com
-16,xqgjogra,2024-03-01,wawbgcsl sywphfte twabluhy phooxqbv fldijxjw jqloktna,Open,dbbfexjw@example.com,lrmarlnb@example.com
-17,qmoydijx,2024-03-01,ihkarfju sbxulekk souxrntz aclawfep jkntjbno emcynpmu,Open,exuihlzc@example.com,spvzqlix@example.com
-18,bnvnnfid,2024-03-01,humawjxa ugsxzxxf aavxrydv khjzlfzc jwukqmhh nzbmxmpn,Open,zcuswnjx@example.com,ltwpffwz@example.com
-19,izshbtwi,2024-03-01,eyhomtcm ngkdhlcp eiflmacj lcevaqyb irzyzuqu mwfiravr,Open,syitbaif@example.com,rbeuxdyu@example.com
-20,hsraqcnr,2024-03-01,bcvcppck cjodfnod cviqrmxg kltlimlu cmmfpvsf xbmsuqqa,Open,exuihlzc@example.com,ltwpffwz@example.com
-21,usirbwne,2024-03-01,xjxcrgii aaouydhr dilhwmkt sujwdnks xnagwgim edgufaqi,Open,bcsjolvb@example.com,ltwpffwz@example.com
-22,lgntnuaz,2024-03-01,cohluqaz acvkzdjv nswqywvg ggvntfba owgllhbz kltymazr,Open,mrcngorh@example.com,lmxdnadw@example.com
-23,mypssjdz,2024-03-01,spohbson vxaccnag bajcoddc bmvwjhnr pikczoec hbqhqkhu,Open,exuihlzc@example.com,lmxdnadw@example.com
-24,ptyavvlu,2024-03-01,qzrakjga ukcbpszw pysngoea xannfsdj eczmrzbc edwtnpll,Open,yacftvad@example.com,spvzqlix@example.com
-25,mouzyigr,2024-03-01,jyajwuan doupyoet nkxeoaev iruvuxpe hdsztqcs rwowjeyw,Open,lerfekxf@example.com,lmxdnadw@example.com
-26,ukvificr,2024-03-01,bhrpvclx yxjqonsi kesfzgps zyfndkkd otgttnlh niqkbehl,Open,ltazxpcc@example.com,lrmarlnb@example.com
-27,uglfypmy,2024-03-01,hsmdvjvb ncwevrnm srdpufci boavodcj onjjllpt rquotvxa,Open,ukdsnhgq@example.com,lmxdnadw@example.com
-28,mbrulvzv,2024-03-01,mjvjodhi cgafmcob gzpwezzv lzagvipp ogldgbpv jkfgtvvq,Open,uqiddwga@example.com,feylwwhe@example.com
-29,pjmfbzed,2024-03-01,qxdvnoda lbhhyvcu cfbardyy egnlcwxc fvebsvfm urnbjvne,Open,prtweflj@example.com,uujtlceo@example.com
-30,oxstpijr,2024-03-01,xantcyib qrtyfbdc itjsvibi sykqsbck wrjtmxic amwmlrpb,Open,vcsqgwfr@example.com,lmxdnadw@example.com
+50001,Order Status,5/1/2024,My order (ID 10001) is delayed and I need an ETA.,Open,user1@email.com,hd91@support.com
+50002,Product Defect,5/2/2024,The running treadmill has a squeaking noise when in use.,Closed,user5@email.com,hd92@support.com
+50003,Account Login,5/3/2024,I can't reset my password,Pending,user10@email.com,hd93@support.com
+50004,Refund Inquiry,5/4/2024,I returned product ID 29,Closed,user13@email.com,hd94@support.com
+50005,Shipping Damage,5/5/2024,The 4K Mirrorless Camera arrived with a cracked screen.,Open,user16@email.com,hd95@support.com
+50006,General Question,5/6/2024,Can I pay with multiple credit cards?,Closed,gen97@email.com,hd96@support.com
+50007,Product Inquiry,5/7/2024,What is the maximum weight capacity of the Queen Size Bed Frame?,Open,user34@email.com,hd91@support.com
+50008,Billing Error,5/8/2024,I was double-charged for transaction 10047.,Pending,user47@email.com,hd92@support.com
+50009,Product Support,5/9/2024,My Smart Doorbell Camera keeps disconnecting from Wi-Fi.,Open,user64@email.com,hd93@support.com
+50010,Order Cancellation,5/10/2024,Please cancel my order 10090,Closed,user10@email.com,hd94@support.com
+50011,Order Status,5/11/2024,Need tracking info for order 10020.,Closed,user20@email.com,hd95@support.com
+50012,Product Defect,5/12/2024,The Blender High Speed only works on the lowest setting.,Open,user73@email.com,hd96@support.com
+50013,Account Login,5/13/2024,My seller account (seller81@biz.com) is locked.,Open,seller81@biz.com,hd91@support.com
+50014,Refund Inquiry,5/14/2024,Checking on refund for Transaction 10065.,Closed,user65@email.com,hd92@support.com
+50015,Shipping Damage,5/15/2024,The Sectional Sofa has a tear in the upholstery.,Open,user47@email.com,hd93@support.com
+50016,General Question,5/16/2024,Are the Women's High Heels true to size?,Closed,user69@email.com,hd94@support.com
+50017,Product Inquiry,5/17/2024,Do the Wireless Noise Cancelling Headphones come with a case?,Open,user7@email.com,hd95@support.com
+50018,Billing Error,5/18/2024,Disputing a charge from Transaction 10078.,Pending,user78@email.com,hd96@support.com
+50019,Product Support,5/19/2024,Need help setting up the Smart Home Security System.,Open,user12@email.com,hd91@support.com
+50020,Order Cancellation,5/20/2024,Cancel transaction 10046.,Closed,user46@email.com,hd92@support.com
+50021,Order Status,5/21/2024,Item from order 10094 is missing.,Open,user14@email.com,hd93@support.com
+50022,Product Defect,5/22/2024,The Portable Bluetooth Speaker won't charge.,Closed,user50@email.com,hd94@support.com
+50023,Account Login,5/23/2024,Need to merge two accounts (user3 and user53).,Pending,user53@email.com,hd95@support.com
+50024,Refund Inquiry,5/24/2024,I returned the Pro Tools Depot item (ID 75).,Closed,user76@email.com,hd96@support.com
+50025,Shipping Damage,5/25/2024,Received a bent Monogrammed Gold Plated Necklace.,Open,user19@email.com,hd91@support.com
+50026,General Question,5/26/2024,How long do your warranties last?,Closed,gen99@email.com,hd92@support.com
+50027,Product Inquiry,5/27/2024,Is the Power Bank compatible with the new iPhone?,Open,user77@email.com,hd93@support.com
+50028,Billing Error,5/28/2024,Incorrect tax applied to Transaction 10051.,Pending,user51@email.com,hd94@support.com
+50029,Product Support,5/29/2024,Need driver for Desktop Gaming PC RTX 4080.,Closed,user24@email.com,hd95@support.com
+50030,Order Cancellation,5/30/2024,Cancel order 20132.,Closed,user1@email.com,hd96@support.com
+50031,Order Status,5/31/2024,Where is my order from The Avid Reader (Transaction 10002)?,Open,user2@email.com,hd91@support.com
+50032,Product Defect,6/1/2024,"The 55"" OLED Smart TV screen has a vertical line.",Closed,user63@email.com,hd92@support.com
+50033,Account Login,6/2/2024,Seller user89@biz.com needs password reset.,Pending,seller89@biz.com,hd93@support.com
+50034,Refund Inquiry,6/3/2024,Requesting refund for Transaction 10080.,Closed,user80@email.com,hd94@support.com
+50035,Shipping Damage,6/4/2024,The pressure cooker (ID 92) arrived dented.,Open,user13@email.com,hd95@support.com
+50036,General Question,6/5/2024,Do you offer military discounts?,Closed,gen98@email.com,hd96@support.com
+50037,Product Inquiry,6/6/2024,Details on the warranty for the Inflatable Paddleboard.,Open,user20@email.com,hd91@support.com
+50038,Billing Error,6/7/2024,Unauthorized charge on my card.,Pending,user9@email.com,hd92@support.com
+50039,Product Support,6/8/2024,Can't assemble the Modular Desk System.,Open,user14@email.com,hd93@support.com
+50040,Order Cancellation,6/9/2024,Need to cancel the order for the Sectional Sofa (ID 46).,Closed,user47@email.com,hd94@support.com
+50041,Order Status,6/10/2024,Checking on Transaction 10077,Open,user77@email.com,hd95@support.com
+50042,Product Defect,6/11/2024,One of the Smart Lighting Kit bulbs is flickering.,Closed,user51@email.com,hd96@support.com
+50043,Account Login,6/12/2024,My email changed,Pending,hd91@support.com,hd91@support.com
+50044,Refund Inquiry,6/13/2024,Requesting refund for the 8-person tent (ID 42).,Closed,user43@email.com,hd92@support.com
+50045,Shipping Damage,6/14/2024,The Desk with Drawers (ID 73) has a cracked corner.,Open,user74@email.com,hd93@support.com
+50046,General Question,6/15/2024,How do I leave a review?,Closed,user75@email.com,hd94@support.com
+50047,Product Inquiry,6/16/2024,Is the Electric Leaf Blower battery-powered?,Open,user15@email.com,hd95@support.com
+50048,Billing Error,6/17/2024,The final total was higher than the cart total.,Pending,user11@email.com,hd96@support.com
+50049,Product Support,6/18/2024,Need help with product ID 93 setup.,Closed,user95@general.com,hd91@support.com
+50050,Order Cancellation,6/19/2024,Cancel all items in Transaction 10098.,Closed,user18@email.com,hd92@support.com

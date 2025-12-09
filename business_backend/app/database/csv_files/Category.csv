@@ -1,11 +1,51 @@
 CategoryID,CategoryName,ParentCategoryID
-1,bdrlmsvb,null
-2,wmyljvit,null
-3,mitftivi,2
-4,ghjtuoky,2
-5,npprjpco,3
-6,nhyomzsn,3
-7,xpvkuyol,null
-8,qjkqhaex,1
-9,uijpipro,1
-10,bgseunry,null
+1,Electronics,
+2,Home Goods,
+3,Books & Media,
+4,Apparel,
+5,Sports & Outdoors,
+6,Smart Devices,1
+7,Laptops & PCs,1
+8,Kitchen Appliances,2
+9,Furniture,2
+10,Fiction,3
+11,Non-Fiction,3
+12,Mens Clothing,4
+13,Womens Clothing,4
+14,Camping Gear,5
+15,Fitness Equipment,5
+16,Smart Watches,6
+17,Smart Speakers,6
+18,Desktop Computers,7
+19,Gaming Laptops,7
+20,Small Appliances,8
+21,Major Appliances,8
+22,Bedroom Furniture,9
+23,Living Room Furniture,9
+24,Science Fiction,10
+25,Thrillers,10
+26,Self-Help,11
+27,Biographies,11
+28,T-Shirts,12
+29,Pants,12
+30,Dresses,13
+31,Jackets,13
+32,Tents,14
+33,Sleeping Bags,14
+34,Treadmills,15
+35,Free Weights,15
+36,Cameras,1
+37,Drones,1
+38,Cookware,2
+39,Cleaning Supplies,2
+40,Gardening Tools,2
+41,Children's Books,3
+42,Magazines,3
+43,Shoes,4
+44,Jewelry,4
+45,Water Sports,5
+46,Winter Sports,5
+47,Office Chairs,9
+48,Televisions,1
+49,Headphones,1
+50,Video Games,3

@@ -1,151 +1,101 @@
-ProductID,Name,Description,Quantity,TagID,CategoryID,Price
-1,slpvhwit,cwthfjnt tdpmmltu yydppuqz kojuomcb npzlvuck unzijelz,31,4,5,57.64
-2,brxnekus,yywtqpcr hlcqwlpe cxazwgdr asudmdgf udmmtnqi qhxuntbo,32,7,9,119.73
-3,wnxhinuy,cadomxxf nfqvjzmm damyyztl qkboiapk drmspufv rypnlabl,29,1,10,47.07
-4,tphyezhi,qoyspeae yfoutshq pzogwxkt wpsvyurl wvmdalrw psgrzica,25,6,2,45.52
-5,reabjwxu,smyvayme iaznyxkt akmrwmbs vluffqbh aivcetxk dcbtovpq,15,1,5,56.55
-6,nrfirjoh,tknonina hvhfplvt vspbtwaz tbnwzzpd fcizysfx hoalqqdl,20,2,8,146.38
-7,ipddkqnm,xxwflaxe owxauvdq rwttesfm uvhrilct ddahztle fpvhcrth,17,2,3,192.5
-8,jilbdolh,mtvzypcc fydbgkln ixmhimte tnodaesg nkxnfuwy qflwkvlc,11,6,10,161.86
-9,faztqiwy,nxamqofg carbnumq ivqxkrxb rkymqavm inkqvnwk wazzlrnl,14,9,4,46.01
-10,jcrlwjya,pmdkbodd yphrsewr yqvhoqdy dbdwurwj ykvpqsyo bhcxtvot,17,9,5,173.94
-11,yrdgmumv,nzbdnery ycelmevq gwtnwhyf sbtgpidd bgvlwuht yhyvsess,34,2,3,158.01
-12,bpbjyyea,vlhpymoj hrsyxfvg tyebmwem jqzsawiw zcivftul gcjyjomz,5,3,10,175.81
-13,jbuvsqbj,nqhwfjgh dmonqvsq jgyclnnu wchwkfrg pilxsiqx xelosyun,12,2,4,52.29
-14,hachnuin,rivkhjfs bmkthygd emfnkuvq kvqdnrxj nchgqhay yhfpqkbl,3,2,2,189.86
-15,sacbggad,vxhkqppt ypfqelun qkboyjsn kkwbqnfn ivvidxdl olvapnrw,31,2,1,186.07
-16,fgwojpqu,ejnebrwl umclpfxb kjxtsnvm efvajgpv nmqgsyco oclwehcj,32,2,3,74.07
-17,rrldqitp,ivjytxvg dgphkddt kwbhsnvv jrpimupi dcenkcpj ffelyqpv,39,4,6,111.62
-18,srdztoga,bmoyebih vzlacttw lzntwxtu odzgrxku zfjbeqbj jbwctyrd,13,3,9,44.06
-19,ebarknhr,xblflrfe cioxeyjg kbbfmqll osdnglxa hhsuoabi rvychxxa,14,5,4,8.91
-20,rsmekbkb,pqvvnniz ipnxqzmh pnddmhuo fthxcuqy hvrzzshs wvgrrnqx,29,7,10,26.96
-21,dwtebkgm,rfmrewhp ojbzclci vjslmnmj ftmejjyd uismzqeo grjjiycs,15,3,7,189.73
-22,torpsxdq,phjtyjno lvjuckiw jjaqbcjf hzkmwmsm hkihbqob floxcpiz,33,6,8,99.5
-23,cbrdvyuh,tmxstnjx egilayav nqirljmg vumttwch ckebyfaa xfbohshg,5,6,6,19.2
-24,dvfrztqq,agycyumm togabwcr ohjdozew xmqdoveo qcpyncdk mvpspwiu,1,7,6,7.37
-25,krcnynxf,llerbeui ahfgjbto otlexoly dupdodae krcauecu wfpxshnv,42,2,5,141.29
-26,qhykobwh,vqaooitc zmhfhcjt zojadusm kxodnloy bmcoxdal bwtdyojd,1,5,7,159.77
-27,zjndohxj,wykqhvsg fzbwhwbw dqbtybxk yppnmqnf mkfejsjo dnlsnnaj,36,8,9,155.25
-28,alhvldhh,noxzrozg trycnvfp wwxfrrjh fewndcpt mazlxkpc djgvqobc,42,4,2,184.61
-29,xguzybof,ynydivov hmiqmtdo fxzvargo zohpdcou wjyoltmg xkdulnme,1,2,5,115.13
-30,mevshcbc,qqcagykf rmeisvjs wosqzahc yvtfgnlo kdrlpkud izbxtuyv,21,3,1,121.4
-31,pfkhhjkb,hfimprwz usjdpeoq npbmbpdj czbnivqp uaomgnts coejpvgl,38,2,3,34.24
-32,agjhhvmx,zveitgkb zaidfmwp djaqisyh isrjvwvq hfkidaci yqqilnvy,48,9,8,33.17
-33,ghraomdb,wshynmlt xiqpfxeo slzvrjkd sypmsets lyekjycf idvkfpnk,12,10,4,92.96
-34,axdzrzxx,cdrnnhec wljegtmn crallhpl bexrwhwa bltbpfrh emkolhbq,32,9,7,174.59
-35,aagwqalr,kecyohtc cnsxdbwt ijnydfkj imlfydxv qzsncnwo mgmwxxbe,50,6,9,173.55
-36,pduclarq,ndmxknkl skiulwgc lapaducm koawtjhc dtmjpryy ajsmtzjf,14,7,10,23.69
-37,ynswqdpi,uwkpedhc kqjjpigt flsegsak qlrytxur gyexntkz nrxqvyyu,43,2,7,188.18
-38,tqynqzhi,jlfszegf zofybogf fskaeqfu kikpyqye oooupafh wxamfffk,13,9,10,49.15
-39,blnwkgpk,wnbuetbt xekegywd rycosgru ulijndin psfunswr fcwzizzs,42,7,7,108.96
-40,qloyaubs,uhuaewok adqxzjns kcgracom nwzeutcs gnyvrhxc dlzqejhc,11,3,4,85.41
-41,mmaaowsi,wvltrpkc gkpmlzwy hxnbnjzl xysexdix bltjeoii jvznyfkq,7,6,10,171.37
-42,idphklia,fulelcxt xpsvcwpb rodanojc fjgveizk vachwitr ekafxisz,23,5,3,106.43
-43,ratnttjm,hlsywrhn fdqulhrs dfoxgmui vpzkpfky xydvpnuo fzfguprx,25,9,1,135.1
-44,hyyxgzqi,bejogauh kfvatife sjlusmyv iyoftxom jwlhqbnn bfubtufn,1,5,8,126.43
-45,zqbxgylx,jywdipdh tfgkltdv oxacaxft fwsbdzvr hywqzwtt wwktmryw,41,7,2,176.57
-46,isodxglx,xcnclxrt dkubuabk qvjzutlh tfcibkeb yavakint uysvaule,5,10,9,190.58
-47,rwvljpud,xklovycq hteuyvsk edzedsrg uoloewhr bfynmivl iiterwie,35,3,5,139.37
-48,grzcmymf,amtsntkg ukaibulh kecnqatc towzafjp rmpeozjo eypcmztw,50,3,8,79.29
-49,vmhferum,iqvucfgf nnopqtpu fhbjujrp kihvksiv nxliyzui aansqzxp,7,4,6,176.73
-50,tvtheffr,rgpqvufm ehjozjrb skwfqrdm ufuedwet qmiltbcd ggicshxx,12,4,6,172.9
-51,edkhfemq,rrwmmiuh ehjaswpz cvuidlmn dabxvgjm wcdjjlld cneucpiz,24,7,6,54.2
-52,egxjdrlv,lxljxwys uplosnxz rzksqdbk pdkrgjea wkrwmqyj osuceiph,25,10,7,134.48
-53,tnwrmubh,jiatenul jfbciwhj fbgyjipe ixkexrob ejctabtg lbsigipe,46,10,4,164.78
-54,zrurdiiy,stwlqnjf icomnipd skwxwncd pukewwqx vvflfbbk xuxkzsha,12,3,5,162.57
-55,doehdrot,sxqdxqde pqcufbpr pceplcya wvuuvafv erhuyiff zkbkdshq,17,2,4,11.93
-56,rfjywrli,otllejlu zeqcqmra nxdvpoia okgiltqr xwapueml jbdkjhfh,20,9,7,38.18
-57,wgambjpe,dnycghwd qjhdcour ymnmplfa aksolyyd xxztvegz wqkuqaad,32,5,7,171.93
-58,qjbpihte,hdccosqz ljixvvmv jrwsaepf nyygfmmr whcoruzg wsvksubl,33,1,10,94.84
-59,wsilaqxr,uyxuqypp hcwqidln aocupxiq ogcnjvdf hulrxmxv lcezhwul,30,3,4,66.26
-60,kobvsvoc,mbngzjsu xaywopch vgsdkwxt ywmoakzl cgrafotz rhhsbxsz,42,7,5,89.34
-61,eecynejy,ldraikyp mgamnkei xwgnnyvb qlhcgbnj wnaqnbrp fujkfsem,13,5,6,124.32
-62,xtpkcozb,gwxpzziz cnxcajjz rgcfpqsb rxulzfba akmrgiiw bbhfwuda,20,7,10,171.81
-63,eywkhymo,rzmsmoiv pvyzkyfl pnrbgsiy ipdxieoq yxfmxvcp tpcrzyvp,24,10,3,6.09
-64,jqoqyrsk,uttkiegc upulcioi rxqpaxvj qwjnagwc tdzhptzc furanawb,2,4,3,112.28
-65,dsidfnlq,hfcgjtzm jddkdrhn qlbehybx hgyyyeeq oxrydpfm yvdnmfyy,33,7,6,14.57
-66,ltutgrns,pwlkdkgy nyozhrhj adzaeluu sghltxal yzfxfhyj iwkhsvuh,33,9,3,5.74
-67,zgnsvtue,vszfclsi polhfskp ovxfktpv owlhbjam tpuitxew hwcvwnpx,1,6,6,88.42
-68,hbkyscpr,hivzbcbc schxykxt qfnogoka advxgqhi vejbwedz gsudhfly,45,2,2,85.53
-69,hzjehwfa,mrfyvytc krudukey slguhjha zxkwyrln ydpioopf ezpcthcq,15,1,4,193.1
-70,axjryqgn,nhnbwcad oyyglqri fdxqdwpe yceutpns bvtwzpza tbszxora,17,1,4,74.26
-71,xajjtryo,pugrfgie rxdzmgty jspjsjlf zahdffse muobksmz ujtescdt,6,1,1,57.4
-72,gfgoggyu,isdmksnz aktzreug zbcbdfsg vwvzhfey smgbhylu corfnsau,13,1,10,26.47
-73,aeuiolqb,dyykhels ayhtpycq ydjugqop ryjustpy kecksgly htiecbxy,21,6,10,189.68
-74,wvjddpii,ovsykqri dxchfzmt guxjbczy guhuonop imtqnbyl zapzuzzc,4,8,3,84.3
-75,lpevfpeu,vjjnmkph nhuqdgzo jugctaqv kcrqphjv vrqlbmkh pmhbrepi,39,3,6,118.9
-76,epbfxoyf,zcddqmhf vsakgzwo cjzhjcgc lyfugdum lgkwnbjr euqrhyus,13,9,8,46.22
-77,uwnuzyin,yxqfrwme hdampffz vmgvewqa jozoqndo ayqjliop tbsqgqtb,50,6,7,20.13
-78,omzwvjne,jtjuzumh lxqnwwbr oygbtzrf rlptgkox dkfkizcn coympnsa,17,1,8,85.02
-79,daddnzht,bpppgxzo edjpwpie ypoicigw czbbxqby vgqjdyqv olmzekol,48,2,6,124.0
-80,zqtbddyc,gixjpxeo pjglgalh wqaowtbs aytflswk qkzikfkd sarkjbtg,17,8,3,107.25
-81,qbfofydf,lfznxjcy efzigssx kpdskums iucwdtcq urtuxddk bvltnsvn,7,8,10,101.35
-82,vqtmzcxs,ehgnnjjj ecepczua dryeoqyy svmxticu cfbxgloj ubnzixqk,2,6,5,114.26
-83,cxkmzjnf,msrmyiiz ucmzodtm dspfgpdu lhtstyrf kylzqecs dcbeqovg,15,3,5,177.81
-84,gjgdjeao,beyiklwe xlrtuygh xpuajwgb docnmxfz hvpxrdsl qazrpmiu,23,3,4,121.57
-85,frwdtxip,dqbyczrt omcussqi vwawsfzj jznkrulc vhzrzcia rynvfnqj,10,6,2,143.01
-86,mxtmlvpd,ttrdtwhc mrixmyvv ejofrrpz yhpfxzlg uvlywahj saemnvuo,2,5,8,15.83
-87,fxdxvwux,dwgztwky exkcffpr oijqthfv vwitbfgv onhklqej xamxhzjp,9,6,4,91.35
-88,sncmhzfq,qwcshqdd cylcupst dfxhrcqa jzfafmsa mtriqerc ktyeqwaq,49,4,7,23.94
-89,bxdxpchr,traksgwj hdajzzng hommirem ntebudut zgzhwudn jhhzwtqp,38,10,8,5.9
-90,oxovdtzj,dgbzkgvn eyosnxyk nmqhajjw gqxckcpi firyenve ijvrocht,14,8,3,36.53
-91,zehwxvvz,ptrjejpy jpzwpflz qlqaoqgg hsdvnpjr rfgwrmhr fothwprh,4,8,2,21.55
-92,pbeezhch,tdnbqkhv iopbqtec tqftmhqa szeqwkme rhjcbpca kjagrqtp,14,1,10,27.94
-93,ozudkurk,rafxgftm vvbrrefd ogslyuir eqcefduz ltnbhtik aoieggbr,49,6,9,33.84
-94,tigcflvm,yttkeplf blgazqiw blqsmvnz hnjjtjwk widecozd iqhxoebu,18,10,5,146.5
-95,aykjkdib,hyoqubhp uqqzsgse vgfvqras unyxudma aazdtmqc vabboajg,43,7,4,29.44
-96,xlbghkwg,zhiejlsn jtzpmjqh iswvgqbu jbhabybs kldyigvu ezrzesgh,33,6,4,109.88
-97,endziqca,zpbyxkvc zbuxoico onyblgno sbrifzzr dtusytjq qnrqtvku,30,5,3,197.76
-98,tqsobwhf,jlpewapc qwgbixgf sfniwrsr kybatneo bfxpyatg czcaclig,34,3,2,44.01
-99,qkfjvrbz,jzvtopjh kpfrlbag vspycksr fsmqfmvy feubqcgu amejkmxa,39,8,5,115.47
-100,jqvcmibk,oiesbzwt nrqxwxjj xgjhqtoj kiuaxquq jwidqeas thaywntf,4,1,1,65.29
-101,ojldaprj,qxmeavco dyyjeckp oihwkzso epnvmoxj luqdmeqq dwxbuzoj,20,9,10,195.4
-102,tkpilldk,olzqnynj piujvaeg kspyzbqq oaqgmsrg zafirigd erghnpjv,4,7,7,150.48
-103,kzpdgcdz,cgbfbasv rcioicjm wxiregtm vvluelop oyfwjkdx cbuwrnez,31,7,1,184.18
-104,gmvdqhfu,rqcdgbdy jvsznkma bjcvyyqn nosxuvol rqsrgnmq xanpsduk,44,3,2,25.5
-105,irrpjjiu,lcpemxif kjgionbb pntjtzqi ijffimfy hyrgdina gaqglwza,49,2,10,158.89
-106,zhqmwipi,lzjkebpg gypmwhpp yvnuydba waxfclui yjsbcvlr qumwpyod,38,4,7,74.17
-107,yquffzex,eftlalof xevcetet tkqhoyyy zneutxlg lxmoljfa csrwkxwc,41,2,10,28.53
-108,egfbronj,jelbvhna dstwkzxj rxdyugqw isgfimkv vafrmhei fdhdxulv,1,5,6,31.79
-109,nemffbvi,gcipupty tizkjdmd bzimqetj lhcddybh ynabwnpv sgmnkcfk,17,6,8,87.19
-110,hpzxdebh,nohshlzv ujwsxawo wxldzkft irizirys hzwqmbrt oaprgcae,16,5,6,184.06
-111,vuakkzbk,wyfwjjfz qrlwrrlz qjtdgsua glcynyfl bhezpdte aqoxpidy,11,7,10,42.51
-112,gbcwuewv,seiaatbr gfarfplf zadrhmhx olbuooyt bvypenva wanewwxj,1,5,4,110.67
-113,rfzmownt,vafijahu jpjpdhbc uochfwlf swwrycqg htpphvbs zhzpmhmy,30,4,4,88.98
-114,niegnomd,hewtmayy eoyncftl lfbtfrul fxiemrfs idgwujgl wsptawvj,41,10,9,66.01
-115,gbgxsiza,lqkmracr jtnwvnaz nzvxhhxf closmcef tqmpokmq dlylxfhs,30,2,5,126.76
-116,crdpfyex,binqdelu hefofxkf usxotskc bkgfcwgb eoyzkeuq hkcgieqv,28,3,9,177.82
-117,yzubsnpl,nmgktawm heuuvdwu boahzeth qunwzqsp udmiqdlk hsmhrfbq,28,2,8,113.2
-118,qscghora,cyjmrgfc xgtxydbk lrlpmsqo fdqdvwxy zqdtafql fcgomnuw,29,7,9,184.78
-119,vgjfeonk,ujhxptgv mkyttmgh acjrapwn ioltfumo curglfau zdkvgwov,9,6,9,138.13
-120,zccjgusn,vgbaggsy mrbxtenx kzlujhei ndpsmfod nliizrny tnyrdeak,15,6,3,122.97
-121,dkszklmr,rnctoytl kqradcdd pywygweb qojoycei bnlljlvx gguzyirl,10,3,9,160.25
-122,eoxuvwgf,sxwbvtfy dmaluhuf ypjfcgvc ijpqovmj rxhhbnkj umoctzcw,30,7,4,18.58
-123,rwfphygp,qyjqqamh zvyizjdh fziddgoh xlqwjfvp teyqsyop nyzrrcby,49,3,3,136.65
-124,mhsauqrd,bnhrxhym etxjgyrj jomsgmva xaaqnorb sfygpvmx whowujih,5,5,8,92.2
-125,hbloalax,vxzesctd pofjthro owhujzii ngtmwsjn opygdtqg yhepaztl,14,9,5,168.25
-126,mlwlsaks,quvysrzm bommhhfy wkouwsdw qrzgnpef wemylajq awdjeadh,48,8,8,133.49
-127,ogwmkdmc,gzmmlssb homvgqpx khshwerf iuzxaxex ojzljznq jkirdmvz,48,4,2,24.05
-128,kmdithly,twheewqy ueyqfnnk nuxmozod uaseoewv xzjxjaww fjdgecra,28,9,2,195.77
-129,nlfvewwo,pulwjkfx vhhfatoa byhmociq hxpttttp ofhkpnms jbnduyuv,13,10,4,132.38
-130,ajxswajt,bqmzvhzd iihcbvnj ruqmgpuh culudppk ctjtahrg daetsocf,9,9,4,95.68
-131,klngvjer,lrhnrtpt ihvmmtgw qkyylluf jjhsxxrr pkaycduc nrpescdg,37,4,6,38.02
-132,ogfegwcn,oajmdgzz vidiohiw pxzeqqmv xengjcop rwmyqjrc ljcsobai,16,8,4,149.71
-133,aphwnyiq,ioyaiyum caumbbrd nrfuxups ihepcxuw iwciffkd plpwyocg,16,4,5,36.02
-134,stgjnsgp,dmdkkaot neilwtjc pwlduwmu cpejcjtu cfzctyor pjramfkc,37,10,7,167.67
-135,wfgklczf,bihezubi ucfnwmka uhtqgjzl hnarosxa kjkiysbh wsoytzvq,24,9,1,85.66
-136,xgdkgfae,kzevfckk kfvauols ojgzkbep pumlfmwd etjsxslg wzeeyuky,24,2,6,185.62
-137,ezwbjipx,xkfkrgre xkiwvewn zbxwcugz shhypuwl kyptfanc tqsfvkan,4,5,9,154.9
-138,szcwpykx,ddswwsdp nxfvxwqt cwjyaaqy zeahntxi exgurlte anxgtvst,26,4,8,83.46
-139,kcpnfbxp,yaadcsyk hheugtgp dxztoktd mvzsocnx whcojwbn zivojoij,11,5,2,70.63
-140,cimqnlwc,lqwgxlum gdpakgie iwxenytt vpndeoxe sdiwgdmu mqosxvwf,25,9,5,91.52
-141,mdswxxcd,pylojqwb ehbvdisx rkmrinxp rjnycxlb sfzxlujg jzqruiyo,4,6,6,60.9
-142,oivaapgu,ulordaui huqodolr znybqsxe uhyqzfek vwrnhonw bscsygsr,15,6,5,71.35
-143,zyzauoin,xjtbybxq igseyhgr oghebzjw nilspdwv iwqwmpwc xunifjsf,45,2,10,87.3
-144,cgbrzwbr,mkeggtho wsuadqlr lyftdkae hlnabqci mogbvolf ywiinsdp,37,1,7,147.82
-145,gycumosi,duomphcf fejstzbv tmqptsiz kdrzvamj zkyksgsn dpixxakk,36,3,8,6.27
-146,qrenxvkg,jvmjuqdr tvnnpfcj lcvfehud lcaygtxz upccpmju tstzxwbm,5,7,8,19.17
-147,sfbiqrxj,hvgpdzqo mqktrlrz shtrnzuv hoslcvwm nngkzvvt mwtqkxen,16,1,6,24.96
-148,syyndjpn,kjbnzths zkelpxvw bshglxdu qxkbrtfw zggigksk hqbczxko,12,5,5,11.67
-149,tzrupscz,yasuzote vlgqolcj oxmcxjis lbfmhnjv ocwxugpv dpupejld,22,7,3,148.48
-150,qjvcetpg,ecrwfqhb rrhfsxgl xjohqset rxjyapxc wtykkcyz xzjaebep,34,9,9,138.75
+ProductID,Name,Description,Quantity,TagID,CategoryID,Price,BusinessID
+1,Zenith Laptop 15 inch,High-performance ultrabook,150,2,7,1499.99,1
+2,Echo Smart Speaker,Voice-controlled home assistant,400,7,17,49.99,6
+3,Professional Chef Knife,8-inch stainless steel blade,250,2,38,75,17
+4,Historical Atlas of Europe,Detailed maps and historical essays,600,2,27,35.5,3
+5,Running Treadmill Pro,Foldable home treadmill,50,2,34,899,15
+6,Waterproof Backpack,40L hiking backpack,120,3,14,55,4
+7,Wireless Noise Cancelling Headphones,Over-ear comfort headphones,350,2,49,129.99,1
+8,Bamboo Cutting Board Set,Eco-friendly kitchen set,550,3,38,29.99,17
+9,Galaxy Smart Watch,Fitness tracking and notifications,280,7,16,249,6
+10,Sci-Fi Dystopian Novel,A gripping tale of a future world,700,4,24,14.5,10
+11,The Power of Habit,Self-help guide to building good habits,800,2,26,18,11
+12,Men's Classic Denim Jeans,Straight fit dark wash,450,2,29,65,12
+13,Women's Summer Dress,Floral print lightweight material,600,1,30,45,13
+14,2-Person Tent Deluxe,Quick-setup waterproof tent,90,10,32,150,14
+15,5lb Dumbbell Pair,Cast iron free weights,900,8,35,25.99,15
+16,4K Mirrorless Camera,Professional quality camera body,40,2,36,1999,16
+17,Robot Vacuum & Mop,Automatic floor cleaner,180,7,20,299,8
+18,Modern Coffee Table,Oak wood minimalist design,30,5,23,250,9
+19,10-Pack Microfiber Towels,All-purpose cleaning cloths,1200,8,39,19.99,2
+20,Electric Leaf Blower,High-power cordless blower,60,10,40,119,7
+21,Desktop Gaming PC RTX 4080,High-end liquid-cooled gaming machine,30,2,18,2999,1
+22,Smart Plug Set (4-pack),Control any device with your phone,600,7,17,35.99,6
+23,Non-Stick Fry Pan 12 inch,Ceramic non-stick surface,300,2,38,45,17
+24,Biography of Elon Musk,In-depth look at the entrepreneur,450,2,27,27.99,11
+25,Heavy Bag Punching Set,Full kit for home boxing workout,40,10,35,199,15
+26,Inflatable Kayak,2-person recreational kayak,70,5,45,349,20
+27,Slim Fit Black Suit,Men's formal wear,100,5,12,250,12
+28,Women's Winter Parka,Insulated waterproof jacket,200,5,31,180,13
+29,All-Season Sleeping Bag,Comfort rating to 0F,150,2,33,89.99,14
+30,Digital SL-R Camera Body,Entry-level photography camera,110,4,36,650,16
+31,Compact Refrigerator,Mini fridge for office or dorm,90,2,20,159.99,8
+32,Queen Size Bed Frame,Wood slat foundation,45,2,22,399,9
+33,Premium Glass Cleaner,Streak-free formula,950,3,39,12.5,2
+34,Hand Pruning Shears,Ergonomic garden tool,750,2,40,18.99,7
+35,40 inch Smart LED TV,UHD display with streaming apps,190,2,48,349.99,1
+36,Google Home Mini,Small smart speaker,700,7,17,29.99,6
+37,Cast Iron Skillet,Pre-seasoned 10-inch skillet,400,10,38,39.99,17
+38,Action Thriller Book,Fast-paced adventure,550,1,25,13.99,10
+39,DIY Home Improvement Guide,Non-fiction practical manual,650,2,26,22.5,11
+40,Hiking Boots Men's,Waterproof leather boots,300,10,43,120,12
+41,Women's Ankle Boots,Leather comfortable fit,480,2,43,85,13
+42,Family Camping Tent,8-person capacity - 2-room design,50,2,32,249.99,14
+43,Yoga Mat & Blocks Set,Non-slip mat and foam blocks,700,3,15,35,15
+44,4K Video Drone,Foldable drone with 3-axis gimbal,70,5,37,850,16
+45,Espresso Machine,Semi-automatic 15-bar pump,130,2,20,279,8
+46,Sectional Sofa,L-shaped velvet upholstery,20,5,23,1200,9
+47,All-Purpose Degreaser,Industrial strength cleaner,1100,8,39,15,2
+48,Telescopic Ladder,Aluminum extension ladder,90,10,40,140,7
+49,Portable Bluetooth Speaker,Long battery life waterproof,500,2,49,69.99,1
+50,Smart Lighting Kit,Color-changing LED bulbs,800,7,17,59.99,6
+51,Silicone Baking Mat Set,Non-stick reusable baking mats,750,3,38,19.5,17
+52,Science Fiction Collection,Box set of classic sci-fi novels,350,5,24,49.99,10
+53,Biography of Marie Curie,Story of the famous scientist,400,2,27,19.99,11
+54,Men's Golf Polo Shirt,Moisture-wicking fabric,600,2,28,40,12
+55,Women's Knit Sweater,Soft wool blend various colors,550,2,31,60,13
+56,Pillow & Blanket Combo,Cozy set for cold nights,650,1,33,45,14
+57,Resistance Bands Set,Various levels for strength training,950,8,35,19.99,15
+58,Compact Digital Camera,Point-and-shoot camera,250,4,36,199.99,16
+59,Microwave Oven,Countertop model 1000W,220,2,20,89.99,8
+60,Outdoor Patio Set (5pc),Wicker chairs and glass table,15,5,23,450,9
+61,Heavy Duty Tarpaulin,Waterproof cover large size,100,10,40,29.99,7
+62,55 inch OLED Smart TV,Premium ultra-thin display,70,5,48,1199,1
+63,Smart Doorbell Camera,Video doorbell with motion detection,320,7,17,149,6
+64,Wok Pan Carbon Steel,Traditional carbon steel wok,280,10,38,34.99,17
+65,Fantasy Novel Series,5-book epic fantasy set,420,5,10,59.99,10
+66,Inspirational Quote Book,Daily motivations and advice,750,2,26,16.5,11
+67,Men's Running Shoes,Lightweight athletic sneakers,500,2,43,89.99,12
+68,Women's High Heels,Elegant black pumps,400,5,43,70,13
+69,Camping Hammock Double,Two-person nylon hammock,600,3,14,35,14
+70,Adjustable Kettlebell,Weight adjustable kettlebell,80,10,35,120,15
+71,Mini Drone Quadcopter,Beginner friendly drone,200,4,37,55,16
+72,Blender High Speed,Professional kitchen blender,160,2,20,99.99,8
+73,Desk with Drawers,Home office desk mahogany finish,60,2,47,199,9
+74,Eco-Friendly Dish Soap,Plant-based biodegradable soap,1500,3,39,8.5,2
+75,Small Shovel Set,Hand tools for gardening,550,2,40,22,7
+76,Ultra Slim Power Bank,10000mAh portable charger,850,2,10,25,1
+77,Smart Thermostat,Learning home temperature control,240,7,17,179,6
+78,Soup Pot Stainless Steel,Heavy-bottom stock pot,310,2,38,55,17
+79,Horror Short Stories,Collection of chilling tales,500,1,25,12.99,10
+80,Guide to Meditation,Mindfulness and relaxation techniques,600,2,26,15.99,11
+81,Men's Casual Button-Up,Cotton long-sleeve shirt,400,2,28,49,12
+82,Women's Pencil Skirt,Office wear formal skirt,350,2,30,40,13
+83,Lightweight Hiking Tent,1-person minimalist tent,110,3,32,99.99,14
+84,Exercise Bike Indoor,Stationary cycling machine,55,2,34,399,15
+85,GoPro Style Action Camera,Rugged waterproof camera,150,4,36,150,16
+86,Large Capacity Washer,Front-loading washing machine,20,5,21,799,8
+87,Bookcase 5-Shelf,Tall wooden bookcase,80,2,23,120,9
+88,Drain Cleaner Heavy Duty,Chemical drain clog remover,700,10,39,9.5,2
+89,Chainsaw Gas-Powered,High-power cutting tool,40,10,40,250,7
+90,Premium USB-C Cable (3ft),Fast charging and data transfer,1000,2,10,15,1
+91,Smart Home Security System,Full kit with sensors and hub,130,7,17,350,6
+92,Pressure Cooker Electric,Multi-functional cooker,190,2,20,119.99,8
+93,Modular Desk System,Customizable office setup,35,2,47,450,9
+94,Comic Book Set (Vol 1-5),Popular superhero comic series,280,5,50,49,18
+95,Children's Picture Book,Illustrated story for ages 3-6,850,2,41,10,18
+96,Classic Rock Magazine Subscription,12-month digital subscription,150,4,42,25,18
+97,Women's Running Sneakers,Lightweight and supportive,450,2,43,75,19
+98,Gold Plated Necklace,Delicate jewelry piece,320,5,44,80,19
+99,Paddleboard Inflatable,Stand-up paddleboard with pump,60,5,45,299,20
+100,Snow Ski Wax Kit,Full kit for tuning winter skis,150,9,46,39.99,20
