@@ -9,12 +9,12 @@ def create_ticket():
     data = request.get_json()
     topic = data.get("topic")
     description = data.get("description")
-    category = data.get("category", "General")
     user_email = data.get("userEmail")
-    helpdesk_email = "helpdesk@nittany.com"
+    helpdesk_email = "helpdesk@nittany.com" # Static for now
+    status = "Open"
 
     if not topic or not description or not user_email:
-        return jsonify({"success": False, "error": "All required fields must be filled."}), 400
+        return jsonify({"success": False, "error": "Missing required fields."}), 400
 
     try:
         db = get_db()
@@ -26,12 +26,12 @@ def create_ticket():
             topic,
             datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
             description,
-            "Open",
+            status,
             user_email,
             helpdesk_email
         ))
         db.commit()
         return jsonify({"success": True}), 201
     except Exception as e:
-        print("Error creating ticket:", e)
+        print("Error inserting ticket:", e)
         return jsonify({"success": False, "error": "Database error."}), 500

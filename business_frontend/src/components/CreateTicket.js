@@ -2,8 +2,8 @@ import React, { useState } from "react";
 
 export default function CreateTicket({ onSubmit }) {
     const [formData, setFormData] = useState({
+        topic: "General",
         description: "",
-        category: "General",
         businessName: "",
         customerPhone: "",
         businessAddress: "",
@@ -26,7 +26,7 @@ export default function CreateTicket({ onSubmit }) {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({
-                    category: formData.category,
+                    topic: formData.topic,
                     description: formData.description,
                     userEmail: localStorage.getItem("userEmail"),
                     businessName: formData.businessName || null,
@@ -40,8 +40,8 @@ export default function CreateTicket({ onSubmit }) {
             if (res.ok && data.success) {
                 setSuccess("Ticket created successfully!");
                 setFormData({
+                    topic: "General",
                     description: "",
-                    category: "General",
                     businessName: "",
                     customerPhone: "",
                     businessAddress: "",
@@ -57,12 +57,12 @@ export default function CreateTicket({ onSubmit }) {
     }
 
     return (
-        <div style={{ textAlign: "center" }}>
-                        <h2>Create Support Ticket</h2>
+                <div style={{ textAlign: "center" }}>
+            <h2>Create Support Ticket</h2>
             <form onSubmit={handleSubmit}>
                 <select
-                    name="category"
-                    value={formData.category}
+                    name="topic"
+                    value={formData.topic}
                     onChange={handleChange}
                     required
                 >
@@ -73,8 +73,8 @@ export default function CreateTicket({ onSubmit }) {
                     <option>Order</option>
                 </select>
 
-                {/* Extra business fields for “Register Business” */}
-                {formData.category === "Register Business" && (
+                {/* Extra business info only when Register Business is selected */}
+                {formData.topic === "Register Business" && (
                     <>
                         <input
                             type="text"
