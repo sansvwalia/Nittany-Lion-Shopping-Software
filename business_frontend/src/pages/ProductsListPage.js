@@ -24,7 +24,7 @@ export default function ProductsListPage() {
             </header>
 
             <main>
-                                
+
                 <div className="min-h-screen bg-slate-100 p-10">
                     <h1 className="text-3xl font-semibold mb-6">Products</h1>
 
@@ -76,9 +76,6 @@ export default function ProductsListPage() {
                         </table>
                     </div>
                 </div>
-                
-
-
             </main>
 
             <footer className="App-footer">
