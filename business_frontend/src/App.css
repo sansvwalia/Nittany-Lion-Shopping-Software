@@ -236,9 +236,15 @@ body {
 }
 
 .modal-content input,
-.modal-content select,
-.modal-content textarea {
+.modal-content select{
     width: 100%;
+    box-sizing: border-box;
+}
+
+.modal-content textarea {
+    resize: none;
+    width: 100%;
+    min-height: 100px;
     box-sizing: border-box;
 }
 
