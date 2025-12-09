@@ -24,7 +24,7 @@ export default function Login() {
         if (data.success) {
             localStorage.setItem("userToken", data.token);
             localStorage.setItem("userEmail", email);
-            localStorage.setItem("userRole", data.role); // 👈 store role
+            localStorage.setItem("userRole", data.role);
 
             // Redirect based on role
             if (data.role === "helpdesk") navigate("/helpdesk");

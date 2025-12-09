@@ -1,4 +1,4 @@
-from flask import Blueprint, jsonify
+from flask import Blueprint, request, jsonify
 from app.db import get_db
 
 products_bp = Blueprint("product", __name__)
