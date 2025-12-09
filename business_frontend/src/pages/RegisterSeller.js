@@ -3,7 +3,7 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
 export default function RegisterSeller() {
-	    const [email, setEmail] = useState("");
+    const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [businessName, setBusinessName] = useState("");
     const [customerServiceNumber, setCustomerServiceNumber] = useState("");
@@ -12,7 +12,21 @@ export default function RegisterSeller() {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+        setError("");
+
         try {
+            // verify business with backend
+            const check = await axios.post("http://localhost:5000/business/checkBusiness", {
+                businessName,
+                customerServiceNumber,
+            });
+
+            if (!check.data.exists) {
+                setError("Business name and phone number do not match or do not exist.");
+                return;
+            }
+
+            // proceed with registration if valid
             const res = await axios.post("http://localhost:5000/registerSeller", {
                 email,
                 password,
@@ -26,7 +40,8 @@ export default function RegisterSeller() {
             } else {
                 setError(res.data.message || "Registration failed.");
             }
-        } catch {
+        } catch (err) {
+            console.error(err);
             setError("Server error, please try again.");
         }
     };
@@ -52,7 +67,7 @@ export default function RegisterSeller() {
                         <input
                             type="password"
                             placeholder="Password"
-                            value={password}
+                                                        value={password}
                             onChange={(e) => setPassword(e.target.value)}
                             required
                         />
@@ -76,7 +91,8 @@ export default function RegisterSeller() {
                     {error && <p className="error">{error}</p>}
                 </div>
             </main>
-			            <footer className="App-footer">
+
+            <footer className="App-footer">
                 © {new Date().getFullYear()} Team Progress | Penn State
             </footer>
         </div>
