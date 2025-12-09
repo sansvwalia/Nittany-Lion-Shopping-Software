@@ -14,6 +14,7 @@ import DBViewerPage from "./pages/DBViewerPage";
 import EditRecord from "./pages/recordeditor";
 import ProductAnalytics from "./pages/ProductAnalytics";
 import SellerAnalytics from "./pages/SellerAnalytics";
+import NoAccess from "./pages/NoAccess";
 
 
 function ProtectedRoute({ allowedRoles, children }) {
@@ -42,6 +43,7 @@ function App() {
                 <Route path="/recordeditor" element={<EditRecord />} />
                 <Route path="/productanalytics" element={<ProductAnalytics />} />
                 <Route path="/selleranalytics" element={<SellerAnalytics />} />
+                <Route path="/noaccess" element={<NoAccess />} />
             </Routes>
         </Router>
     );

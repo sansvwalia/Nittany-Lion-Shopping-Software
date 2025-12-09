@@ -4,10 +4,18 @@ import Modal from "../components/Modal";
 import CreateTicket from "../components/CreateTicket";
 import CreateListing from "../components/CreateListing";
 import EditListing from "../components/EditListing";
+import DashboardSwitcher from "../components/DashboardSwitch";
 import "../App.css";
 
 export default function SellerDashboard() {
     const navigate = useNavigate();
+    const userRole = localStorage.getItem("userRole");
+
+useEffect(() => {
+    if (userRole !== "seller" && userRole !== "helpdesk") {
+        navigate("/noaccess");
+    }
+}, [userRole, navigate]);
 
     const [products, setProducts] = useState([]);
     const [orders, setOrders] = useState([]);
@@ -195,6 +203,7 @@ export default function SellerDashboard() {
                 </button>
                 <span className="tooltip-text">Sign Out</span>
             </div>
+            <DashboardSwitcher />
         </div>
     );
 }

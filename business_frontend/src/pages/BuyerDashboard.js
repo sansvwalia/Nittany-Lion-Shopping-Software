@@ -3,6 +3,7 @@ import Navigation from "../components/Navigation";
 import { useNavigate } from "react-router-dom";
 import Modal from "../components/Modal";
 import CreateTicket from "../components/CreateTicket";
+import DashboardSwitcher from "../components/DashboardSwitch";
 import "../App.css";
 
 
@@ -224,7 +225,7 @@ function BuyerDashboard() {
         </button>
         <span className="tooltip-text">Sign Out</span>
         </div>
-
+        <DashboardSwitcher />
     </div>
   );
 }
