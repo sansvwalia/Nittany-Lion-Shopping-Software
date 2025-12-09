@@ -5,6 +5,9 @@ export default function CreateTicket({ onSubmit }) {
         subject: "",
         description: "",
         category: "General",
+        businessName: "",
+        customerPhone: "",
+        businessAddress: "",
     });
 
     function handleChange(e) {
@@ -15,7 +18,14 @@ export default function CreateTicket({ onSubmit }) {
     function handleSubmit(e) {
         e.preventDefault();
         onSubmit?.(formData);
-        setFormData({ subject: "", description: "", category: "General" });
+        setFormData({
+            subject: "",
+            description: "",
+            category: "General",
+            businessName: "",
+            customerPhone: "",
+            businessAddress: "",
+        });
     }
 
     return (
@@ -30,12 +40,45 @@ export default function CreateTicket({ onSubmit }) {
                     onChange={handleChange}
                     required
                 />
+
                 <select name="category" value={formData.category} onChange={handleChange}>
                     <option>General</option>
+                    <option>Register Business</option>
                     <option>Technical Issue</option>
                     <option>Account</option>
                     <option>Order</option>
                 </select>
+
+                {/* Conditionally show extra fields */}
+                {formData.category === "Register Business" && (
+                    <>
+                        <input
+                            type="text"
+                            name="businessName"
+                            placeholder="Business Name"
+                            value={formData.businessName}
+                            onChange={handleChange}
+                            required
+                        />
+                        <input
+                            type="tel"
+                            name="customerPhone"
+                            placeholder="Customer Service Phone Number"
+                            value={formData.customerPhone}
+                            onChange={handleChange}
+                            required
+                        />
+                        <input
+                            type="text"
+                            name="businessAddress"
+                            placeholder="Business Address"
+                            value={formData.businessAddress}
+                                                        onChange={handleChange}
+                            required
+                        />
+                    </>
+                )}
+
                 <textarea
                     name="description"
                     placeholder="Describe your issue..."
@@ -50,6 +93,7 @@ export default function CreateTicket({ onSubmit }) {
                         minHeight: "100px",
                     }}
                 />
+
                 <button type="submit" className="button">Submit Ticket</button>
             </form>
         </div>
