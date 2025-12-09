@@ -34,6 +34,10 @@ export default function HelpDeskDashboard() {
                   <button className="button" onClick={() => navigate("/productanalytics")}>
                       Product Analytics
                   </button>
+
+                <button className="button" onClick={() => navigate("/selleranalytics")}>
+                      Seller Analytics
+                  </button>
               </div>
 
 
