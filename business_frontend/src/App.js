@@ -13,40 +13,49 @@ import ProductsListPage from "./pages/ProductsListPage";
 import DBViewerPage from "./pages/DBViewerPage";
 import EditRecord from "./pages/recordeditor";
 import ProductAnalytics from "./pages/ProductAnalytics";
-import NoAccess from "./pages/NoAccess";
+
+
+const role = localStorage.getItem("userRole");
+if (role === "undefined" || role === "null") {
+    localStorage.removeItem("userRole");
+}
 
 function ProtectedRoute({ allowedRoles, children }) {
-    const role = localStorage.getItem("userRole");
-    if (!role) return <Navigate to="/" />;
-    if (!allowedRoles.includes(role)) return <Navigate to="/noaccess" />;
+    let role = localStorage.getItem("userRole");
+    if (role) role = role.replace(/['"\s]/g, "").toLowerCase();
+    if (!role || !allowedRoles.includes(role)) return <Navigate to="/" />;
+
     return children;
 }
 
 // Default redirect handler for the root path
 function DefaultRedirect() {
     const role = localStorage.getItem("userRole");
-    if (role === "seller") return <Navigate to="/seller" />;
+    if (role === "seller" || role === "helpdesk") return <Navigate to="/seller" />;
     if (role === "buyer") return <Navigate to="/buyer" />;
     if (role === "helpdesk") return <Navigate to="/helpdesk" />;
-    return <Login />; // fallback if not logged in
+    return <Login />;
 }
 
 function App() {
     return (
         <Router>
             <Routes>
-                {/* Root path automatically sends user to their role's dashboard */}
-                <Route path="/" element={<DefaultRedirect />} />
+                {/* PUBLIC: login + register */}
+                <Route path="/" element={<Login />} />
+                <Route path="/register" element={<Register />} />
+                <Route path="/registerUser" element={<RegisterUser />} />
+                <Route path="/registerSeller" element={<RegisterSeller />} />
 
+                {/* PRIVATE: dashboards */}
                 <Route
                     path="/seller"
                     element={
-                                                <ProtectedRoute allowedRoles={["seller", "helpdesk"]}>
+                        <ProtectedRoute allowedRoles={["seller", "helpdesk"]}>
                             <SellerDashboard />
                         </ProtectedRoute>
                     }
                 />
-
                 <Route
                     path="/buyer"
                     element={
@@ -55,7 +64,6 @@ function App() {
                         </ProtectedRoute>
                     }
                 />
-
                 <Route
                     path="/helpdesk"
                     element={
@@ -64,15 +72,11 @@ function App() {
                         </ProtectedRoute>
                     }
                 />
-
-                <Route path="/register" element={<Register />} />
-                <Route path="/registerUser" element={<RegisterUser />} />
-                <Route path="/registerSeller" element={<RegisterSeller />} />
                 <Route path="/dbviewer" element={<DBViewerPage />} />
                 <Route path="/products" element={<ProductsListPage />} />
                 <Route path="/recordeditor" element={<EditRecord />} />
                 <Route path="/productanalytics" element={<ProductAnalytics />} />
-                <Route path="/noaccess" element={<NoAccess />} />
+                <Route path="/home" element={<DefaultRedirect />} />
             </Routes>
         </Router>
     );
