@@ -5,6 +5,9 @@ export default function CreateTicket({ onSubmit }) {
         subject: "",
         description: "",
         category: "General",
+        businessName: "",
+        customerPhone: "",
+        businessAddress: "",
     });
     const [error, setError] = useState("");
     const [success, setSuccess] = useState("");
@@ -27,7 +30,10 @@ export default function CreateTicket({ onSubmit }) {
                     topic: formData.subject,
                     description: formData.description,
                     category: formData.category,
-                    userEmail: localStorage.getItem("userEmail"), // logged‑in user
+                    userEmail: localStorage.getItem("userEmail"),
+                    businessName: formData.businessName || null,
+                    customerPhone: formData.customerPhone || null,
+                    businessAddress: formData.businessAddress || null,
                 }),
             });
 
@@ -35,7 +41,14 @@ export default function CreateTicket({ onSubmit }) {
 
             if (res.ok && data.success) {
                 setSuccess("Ticket created successfully!");
-                setFormData({ subject: "", description: "", category: "General" });
+                setFormData({
+                    subject: "",
+                    description: "",
+                    category: "General",
+                    businessName: "",
+                    customerPhone: "",
+                    businessAddress: "",
+                });
                 onSubmit?.(formData);
             } else {
                 setError(data.error || "Failed to create ticket. Please try again.");
@@ -49,7 +62,7 @@ export default function CreateTicket({ onSubmit }) {
     return (
         <div style={{ textAlign: "center" }}>
             <h2>Create Support Ticket</h2>
-            <form onSubmit={handleSubmit}>
+                        <form onSubmit={handleSubmit}>
                 <input
                     type="text"
                     name="subject"
@@ -60,12 +73,42 @@ export default function CreateTicket({ onSubmit }) {
                 />
 
                 <select name="category" value={formData.category} onChange={handleChange}>
-                                        <option>General</option>
+                    <option>General</option>
                     <option>Register Business</option>
                     <option>Technical Issue</option>
                     <option>Account</option>
                     <option>Order</option>
                 </select>
+
+                {/* Extra fields only for Register Business */}
+                {formData.category === "Register Business" && (
+                    <>
+                        <input
+                            type="text"
+                            name="businessName"
+                            placeholder="Business Name"
+                            value={formData.businessName}
+                            onChange={handleChange}
+                            required
+                        />
+                        <input
+                            type="tel"
+                            name="customerPhone"
+                            placeholder="Customer Service Number"
+                            value={formData.customerPhone}
+                            onChange={handleChange}
+                            required
+                        />
+                        <input
+                            type="text"
+                            name="businessAddress"
+                            placeholder="Business Address"
+                            value={formData.businessAddress}
+                            onChange={handleChange}
+                            required
+                        />
+                    </>
+                )}
 
                 <textarea
                     name="description"
