@@ -129,3 +129,46 @@ def upgrade_to_seller():
     except Exception as e:
         print("Upgrade to seller error:", e)
         return jsonify({"success": False, "error": "Server error."}), 500
+
+@users_bp.route("/registerSeller", methods=["POST"])
+def register_seller():
+    data = request.get_json()
+    email = data.get("email")
+    password = data.get("password")
+    business_name = data.get("businessName")
+    customer_service_number = data.get("customerServiceNumber")
+
+    if not all([email, password, business_name, customer_service_number]):
+        return jsonify({"success": False, "error": "Missing fields"}), 400
+
+    try:
+        db = get_db()
+        cursor = db.cursor()
+
+        # Validate business
+        cursor.execute(
+            "SELECT BusinessID FROM Business WHERE BusinessName = ? AND Phone = ?",
+            (business_name, customer_service_number)
+        )
+        business = cursor.fetchone()
+        if not business:
+            return jsonify({"success": False, "error": "Business validation failed."}), 400
+
+        business_id = business["BusinessID"]
+
+        # Add new registered user
+        cursor.execute(
+            "INSERT INTO Registered_User (Email, Password) VALUES (?, ?)", (email, password)
+        )
+
+        # Add to Seller table
+        cursor.execute(
+            "INSERT INTO Seller (BusinessID, UserEmail) VALUES (?, ?)", (business_id, email)
+        )
+
+        db.commit()
+        return jsonify({"success": True}), 201
+
+    except Exception as e:
+        print("Register seller error:", e)
+        return jsonify({"success": False, "error": "Server error"}), 500
