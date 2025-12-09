@@ -5,27 +5,45 @@ export default function CreateTicket({ onSubmit }) {
         subject: "",
         description: "",
         category: "General",
-        businessName: "",
-        customerPhone: "",
-        businessAddress: "",
     });
+    const [error, setError] = useState("");
+    const [success, setSuccess] = useState("");
 
     function handleChange(e) {
         const { name, value } = e.target;
         setFormData(prev => ({ ...prev, [name]: value }));
     }
 
-    function handleSubmit(e) {
+    async function handleSubmit(e) {
         e.preventDefault();
-        onSubmit?.(formData);
-        setFormData({
-            subject: "",
-            description: "",
-            category: "General",
-            businessName: "",
-            customerPhone: "",
-            businessAddress: "",
-        });
+        setError("");
+        setSuccess("");
+
+        try {
+            const res = await fetch("http://localhost:5000/tickets/create", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                    topic: formData.subject,
+                    description: formData.description,
+                    category: formData.category,
+                    userEmail: localStorage.getItem("userEmail"), // logged‑in user
+                }),
+            });
+
+            const data = await res.json();
+
+            if (res.ok && data.success) {
+                setSuccess("Ticket created successfully!");
+                setFormData({ subject: "", description: "", category: "General" });
+                onSubmit?.(formData);
+            } else {
+                setError(data.error || "Failed to create ticket. Please try again.");
+            }
+        } catch (err) {
+            console.error("Ticket submission error:", err);
+            setError("Server error. Please try again later.");
+        }
     }
 
     return (
@@ -42,42 +60,12 @@ export default function CreateTicket({ onSubmit }) {
                 />
 
                 <select name="category" value={formData.category} onChange={handleChange}>
-                    <option>General</option>
+                                        <option>General</option>
                     <option>Register Business</option>
                     <option>Technical Issue</option>
                     <option>Account</option>
                     <option>Order</option>
                 </select>
-
-                {/* Conditionally show extra fields */}
-                {formData.category === "Register Business" && (
-                    <>
-                        <input
-                            type="text"
-                            name="businessName"
-                            placeholder="Business Name"
-                            value={formData.businessName}
-                            onChange={handleChange}
-                            required
-                        />
-                        <input
-                            type="tel"
-                            name="customerPhone"
-                            placeholder="Customer Service Phone Number"
-                            value={formData.customerPhone}
-                            onChange={handleChange}
-                            required
-                        />
-                        <input
-                            type="text"
-                            name="businessAddress"
-                            placeholder="Business Address"
-                            value={formData.businessAddress}
-                                                        onChange={handleChange}
-                            required
-                        />
-                    </>
-                )}
 
                 <textarea
                     name="description"
@@ -85,16 +73,14 @@ export default function CreateTicket({ onSubmit }) {
                     value={formData.description}
                     onChange={handleChange}
                     required
-                    style={{
-                        padding: "12px",
-                        borderRadius: "5px",
-                        border: "1px solid #ccc",
-                        resize: "vertical",
-                        minHeight: "100px",
-                    }}
                 />
 
-                <button type="submit" className="button">Submit Ticket</button>
+                <button type="submit" className="button">
+                    Submit Ticket
+                </button>
+
+                {error && <p className="error">{error}</p>}
+                {success && <p style={{ color: "green" }}>{success}</p>}
             </form>
         </div>
     );
