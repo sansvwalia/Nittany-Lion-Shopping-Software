@@ -2,7 +2,9 @@
 
 CREATE TABLE IF NOT EXISTS Category(
     CategoryID INTEGER PRIMARY KEY, 
-    CategoryName TEXT
+    CategoryName TEXT,
+    ParentCategoryID INTEGER,
+    FOREIGN KEY ParentCategoryID REFERENCES Category(CategoryID)
 )
 
 
@@ -25,7 +27,9 @@ CREATE TABLE IF NOT EXISTS Business(
     BusinessID INTEGER PRIMARY KEY,
     BusinessName TEXT,
     BusinessEmail TEXT,
-    Phone TEXT
+    address_id INTEGER,
+    Phone TEXT,
+    FOREIGN KEY address_id REFERENCES Address(address_id)
 )
 
 
@@ -47,7 +51,7 @@ CREATE TABLE IF NOT EXISTS Help_Desk(
 
 
 
-CREATE TABLE IF NOT EXISTS "Transaction"(
+CREATE TABLE IF NOT EXISTS Transactions(
     TransactionID INTEGER PRIMARY KEY,
     Transaction_Date TEXT,
     Total REAL,
@@ -84,6 +88,8 @@ CREATE TABLE IF NOT EXISTS Product(
     TagID INTEGER,
     CategoryID INTEGER,
     Price REAL,
+    BusinessID TEXT,
+    FOREIGN KEY (BusinessID) REFERENCES Business(BusinessID) 
     FOREIGN KEY (TagID) REFERENCES Tag(TagID),
     FOREIGN KEY (CategoryID) REFERENCES Category(CategoryID)
 )
@@ -120,7 +126,7 @@ CREATE TABLE IF NOT EXISTS Orders(
     ProductID INTEGER,
     TransactionID INTEGER,
     FOREIGN KEY (ProductID) REFERENCES Product(ProductID),
-    FOREIGN KEY (TransactionID) REFERENCES "Transaction"(TransactionID)
+    FOREIGN KEY (TransactionID) REFERENCES Transactions(TransactionID)
 )
 
 
