@@ -9,22 +9,35 @@ export default function Login() {
     const [error, setError] = useState("");
     const navigate = useNavigate();
 
-    const handleSubmit = async (e) => {
-        e.preventDefault();
-        try {
-            const res = await axios.post("http://localhost:5000/login", { email, password });
+   const handleSubmit = async (e) => {
+    e.preventDefault();
+    setError("");
 
-            if (res.data.success) {
-                alert(`Welcome! Logged in as ${res.data.role}`);
-                // navigate(`/dashboard/${res.data.role}`);
-            } else {
-                setError(res.data.message || "Login failed");
-            }
-        } catch {
-            setError("Server error, please try again.");
+    try {
+        const res = await fetch("http://localhost:5000/users/login", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email, password }),
+    });
+        const data = await res.json();
+
+        if (data.success) {
+            localStorage.setItem("userToken", data.token);
+            localStorage.setItem("userEmail", email);
+            localStorage.setItem("userRole", data.role);
+
+            // Redirect based on role
+            if (data.role === "helpdesk") navigate("/helpdesk");
+            else if (data.role === "seller") navigate("/seller");
+            else navigate("/buyer");
+        } else {
+            setError("Invalid email or password.");
         }
-    };
-
+    } catch (err) {
+        console.error(err);
+        setError("Server error, please try again.");
+    }
+};
     return (
         <div className="App">
             <header className="App-header">
