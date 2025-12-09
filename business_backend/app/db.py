@@ -48,3 +48,91 @@ def update_row(table, pk_name, pk_value, data):
     conn.close()
 
     return cur.rowcount > 0
+
+def insert_row(table, data):
+    try:
+        conn = sqlite3.connect("your_database.db")
+        cursor = conn.cursor()
+
+        columns = ", ".join(data.keys())
+        placeholders = ", ".join(["?"] * len(data))
+        values = tuple(data.values())
+
+        sql = f"INSERT INTO {table} ({columns}) VALUES ({placeholders})"
+        cursor.execute(sql, values)
+
+        conn.commit()
+        inserted_id = cursor.lastrowid
+        conn.close()
+
+        return inserted_id
+
+    except Exception as e:
+        print("Insert error:", e)
+        return None
+    
+def delete_row(table, pk_name, pk_value):
+    try:
+        conn = get_db()
+        cursor = conn.cursor()
+
+        # Validate that the column exists
+        cursor.execute(f"PRAGMA table_info({table})")
+        columns = [col[1] for col in cursor.fetchall()]
+        if pk_name not in columns:
+            return False
+
+        cursor.execute(
+            f"DELETE FROM {table} WHERE {pk_name} = ?",
+            (pk_value,)
+        )
+        conn.commit()
+
+        return cursor.rowcount > 0  # True only if a row was deleted
+
+    except Exception as e:
+        print("Delete error:", e)
+        return False
+    
+def get_table_columns(table):
+    """
+    Returns a list of dicts describing each column in a table.
+    Each dict: { "name": str, "type": str, "pk": int }
+    """
+    conn = get_db()
+    cur = conn.cursor()
+
+    try:
+        cur.execute(f"PRAGMA table_info({table})")
+        rows = cur.fetchall()
+
+        if not rows:
+            return None  # table not found
+
+        columns = []
+        for col in rows:
+            columns.append({
+                "name": col["name"],       # column name
+                "type": col["type"],       # SQLite data type
+                "pk": col["pk"]            # 1 if primary key
+            })
+
+        return columns
+
+    except Exception as e:
+        print("Error fetching table columns:", e)
+        return None
+
+    finally:
+        conn.close()
+
+def get_tables():
+    db = get_db()
+    rows = db.execute("""
+        SELECT name 
+        FROM sqlite_master 
+        WHERE type='table' AND name NOT LIKE 'sqlite_%'
+        ORDER BY name;
+    """).fetchall()
+
+    return [row["name"] for row in rows]

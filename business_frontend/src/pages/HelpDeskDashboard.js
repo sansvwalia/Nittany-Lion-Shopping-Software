@@ -14,10 +14,7 @@ export default function HelpDeskDashboard() {
 
   return (
             <div className="App">
-            <header className="App-header">
-                <h1>Nittany Business</h1>
-                <p>Help Desk Dashboard</p>
-            </header>
+            <header className="App-header">Help Desk Dashboard</header>
 
             <main className="min-h-screen bg-slate-100">
 
