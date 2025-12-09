@@ -9,13 +9,29 @@ import "../App.css";
 
 export default function SellerDashboard() {
     const navigate = useNavigate();
-    const userRole = localStorage.getItem("userRole");
 
-useEffect(() => {
-    if (userRole !== "seller" && userRole !== "helpdesk") {
-        navigate("/noaccess");
-    }
-}, [userRole, navigate]);
+    useEffect(() => {
+        const checkAccess = async () => {
+            const email = localStorage.getItem("userEmail");
+            if (!email) {
+                navigate("/noaccess");
+                return;
+            }
+
+            try {
+                const res = await fetch(`http://localhost:5000/users/role/${email}`);
+                const data = await res.json();
+                if (data.role !== "seller" && data.role !== "helpdesk") {
+                    navigate("/noaccess");
+                }
+            } catch (err) {
+                console.error("Role check failed:", err);
+                navigate("/noaccess");
+            }
+        };
+
+        checkAccess();
+    }, [navigate]);
 
     const [products, setProducts] = useState([]);
     const [orders, setOrders] = useState([]);
