@@ -4,25 +4,18 @@ import { Link } from "react-router-dom";
 export default function DBViewerPage() {
 
   const [selected, setSelected] = useState("");
+  const [tables, setTables] = useState([]);
 
-  // Hardcode the list of available tables here.
-  const tables = [
-    { name: "Category", route: "category" },
-    { name: "Tag", route: "tag" },
-    { name: "Registered_User", route: "users" },
-    { name: "Business", route: "business" },
-    { name: "Buyer", route: "buyer_table" },
-    { name: "Help_Desk", route: "helpdesk_table" },
-    { name: "('Transaction')", route: "transaction" },
-    { name: "Zipcode_Info", route: "zipcode" },
-    { name: "Credit_Cards", route: "creditcards" },
-    { name: "Product", route: "products" },
-    { name: "Seller", route: "sellers" },
-    { name: "Ticket", route: "tickets" },
-    { name: "Orders", route: "orders" },
-    { name: "Review", route: "review" },
-    { name: "Address", route: "address" }
-  ];
+  // list of available tables here.
+  useEffect(() => {
+    // with  GET /tables
+    fetch("http://localhost:5000/tables")
+      .then(res => res.json())
+      .then(data => {
+        if (data.tables) setTables(data.tables);
+      })
+      .catch(() => {});
+  }, []);
 
   return (
     
@@ -38,11 +31,12 @@ export default function DBViewerPage() {
       <select
         value={selected}
         onChange={(e) => setSelected(e.target.value)}
-        style={{ padding: "10px", marginTop: "20px" }}
       >
         <option value="">Select a table...</option>
         {tables.map((t) => (
-          <option key={t.route} value={t.route}>{t.name}</option>
+          <option key={t.route} value={t.route}>
+            {t.label}
+          </option>
         ))}
       </select>
 

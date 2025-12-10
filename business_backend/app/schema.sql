@@ -8,26 +8,40 @@ CREATE TABLE IF NOT EXISTS Category(
 );
 
 
+CREATE TABLE IF NOT EXISTS Zipcode_Info(
+    zipcode INTEGER PRIMARY KEY,
+    city TEXT NOT NULL,
+    state TEXT NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS Address(
+    address_id INTEGER PRIMARY KEY,
+    zipcode INTEGER NOT NULL,
+    street_num INTEGER,
+    streetname TEXT NOT NULL,
+    FOREIGN KEY (zipcode) REFERENCES Zipcode_Info(zipcode)
+);
 
 CREATE TABLE IF NOT EXISTS Tag(
     TagID INTEGER PRIMARY KEY, 
-    TagName TEXT
+    TagName TEXT NOT NULL
 );
 
 
 
 CREATE TABLE IF NOT EXISTS Registered_User(
     Email TEXT PRIMARY KEY,
-    Password TEXT
+    Password TEXT NOT NULL
 );
 
 
 
 CREATE TABLE IF NOT EXISTS Business(
     BusinessID INTEGER PRIMARY KEY,
-    BusinessName TEXT,
+    BusinessName TEXT NOT NULL,
     BusinessEmail TEXT,
-    address_id INTEGER,
+    AccountBalance REAL DEFAULT 0,
+    address_id INTEGER NOT NULL,
     Phone TEXT,
     FOREIGN KEY (address_id) REFERENCES Address(address_id)
 );
@@ -36,10 +50,12 @@ CREATE TABLE IF NOT EXISTS Business(
 
 CREATE TABLE IF NOT EXISTS Buyer(
     BuyerEmail TEXT PRIMARY KEY,
-    StreetAddress TEXT,
-    FName TEXT,
-    LName TEXT,
-    RegistrationDate TEXT
+    address_id INTEGER NOT NULL,
+    FName TEXT NOT NULL,
+    LName TEXT NOT NULL,
+    RegistrationDate TEXT,
+    FOREIGN KEY (BuyerEmail) REFERENCES Registered_User(Email),
+    FOREIGN KEY (address_id) REFERENCES Address(address_id)
 );
 
 
@@ -54,18 +70,13 @@ CREATE TABLE IF NOT EXISTS Help_Desk(
 CREATE TABLE IF NOT EXISTS Transactions(
     TransactionID INTEGER PRIMARY KEY,
     Transaction_Date TEXT,
-    Total REAL,
-    BuyerEmail TEXT,
+    Total REAL DEFAULT 0,
+    BuyerEmail TEXT NOT NULL,
+    Status TEXT NOT NULL,
     FOREIGN KEY (BuyerEmail) REFERENCES Buyer(BuyerEmail)
 );
 
 
-
-CREATE TABLE IF NOT EXISTS Zipcode_Info(
-    zipcode INTEGER PRIMARY KEY,
-    city TEXT,
-    state TEXT
-);
 
 
 CREATE TABLE IF NOT EXISTS Credit_Cards(
@@ -75,20 +86,20 @@ CREATE TABLE IF NOT EXISTS Credit_Cards(
     expire_year INTEGER,
     security_code TEXT,
     owner_email TEXT NOT NULL,
-    FOREIGN KEY (owner_email) REFERENCES Registered_User(email)
+    FOREIGN KEY (owner_email) REFERENCES Registered_User(Email)
 );
 
 
 
 CREATE TABLE IF NOT EXISTS Product(
     ProductID INTEGER PRIMARY KEY,
-    Name TEXT,
+    Name TEXT NOT NULL,
     Description TEXT,
-    Quantity INTEGER,
+    Quantity INTEGER DEFAULT 0,
     TagID INTEGER,
-    CategoryID INTEGER,
-    Price REAL,
-    BusinessID TEXT,
+    CategoryID INTEGER NOT NULL,
+    Price REAL DEFAULT 1,
+    BusinessID INTEGER NOT NULL,
     FOREIGN KEY (BusinessID) REFERENCES Business(BusinessID),
     FOREIGN KEY (TagID) REFERENCES Tag(TagID),
     FOREIGN KEY (CategoryID) REFERENCES Category(CategoryID)
@@ -96,7 +107,7 @@ CREATE TABLE IF NOT EXISTS Product(
 
 
 CREATE TABLE IF NOT EXISTS Seller(
-    BusinessID INTEGER,
+    BusinessID INTEGER NOT NULL,
     UserEmail TEXT PRIMARY KEY,
     FOREIGN KEY (BusinessID) REFERENCES Business(BusinessID),
     FOREIGN KEY (UserEmail) REFERENCES Registered_User(Email)
@@ -107,10 +118,10 @@ CREATE TABLE IF NOT EXISTS Seller(
 
 CREATE TABLE IF NOT EXISTS Ticket(
     TicketID INTEGER PRIMARY KEY,
-    Topic TEXT,
+    Topic TEXT NOT NULL,
     Date_Opened TEXT,
     Description TEXT,
-    Status TEXT,
+    Status TEXT NOT NULL,
     UserEmail TEXT NOT NULL,
     HelpDeskEmail TEXT NOT NULL,
     FOREIGN KEY (UserEmail) REFERENCES Registered_User(Email),
@@ -121,10 +132,10 @@ CREATE TABLE IF NOT EXISTS Ticket(
 
 CREATE TABLE IF NOT EXISTS Orders(
     OrderID INTEGER PRIMARY KEY,
-    Quantity INTEGER,
+    Quantity INTEGER NOT NULL DEFAULT 1,
     DateCreated TEXT,
-    ProductID INTEGER,
-    TransactionID INTEGER,
+    ProductID INTEGER NOT NULL,
+    TransactionID INTEGER NOT NULL,
     FOREIGN KEY (ProductID) REFERENCES Product(ProductID),
     FOREIGN KEY (TransactionID) REFERENCES Transactions(TransactionID)
 );
@@ -132,21 +143,16 @@ CREATE TABLE IF NOT EXISTS Orders(
 
 CREATE TABLE IF NOT EXISTS Review(
     ReviewID INTEGER PRIMARY KEY,
+    Rating INTEGER CHECK (Rating <= 5 AND Rating >0),
     DateCreated TEXT,
     Text TEXT,
-    ProductID INTEGER,
-    BuyerEmail TEXT,
+    ProductID INTEGER NOT NULL,
+    BuyerEmail TEXT NOT NULL,
     FOREIGN KEY (ProductID) REFERENCES Product(ProductID),
     FOREIGN KEY (BuyerEmail) REFERENCES Buyer(BuyerEmail)
 );
 
 
 
-CREATE TABLE IF NOT EXISTS Address(
-    address_id INTEGER PRIMARY KEY,
-    zipcode INTEGER,
-    street_num INTEGER,
-    streetname TEXT,
-    FOREIGN KEY (zipcode) REFERENCES Zipcode_Info(zipcode)
-);
+
 

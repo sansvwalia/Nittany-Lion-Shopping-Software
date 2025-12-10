@@ -12,6 +12,36 @@ export default function EditListing({ listing, onSubmit }) {
         e.preventDefault();
         onSubmit(form);
     }
+    async function handleSubmit(e) {
+    e.preventDefault();
+        try {
+        const res = await fetch(
+            `http://localhost:5000/products/update/${listing.ProductID}`,
+            {
+                method: "PUT",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                    name: form.name,
+                    description: form.description,
+                    price: form.price,
+                    quantity: form.quantity,
+                }),
+            }
+        );
+
+        const data = await res.json();
+
+        if (res.ok && data.success) {
+            alert("Listing updated successfully!");
+            onSubmit(form);
+        } else {
+            alert(data.error || "Failed to update listing.");
+        }
+    } catch (err) {
+        console.error("Edit listing error:", err);
+        alert("Server error — please try again later.");
+    }
+}
 
     return (
         <div>

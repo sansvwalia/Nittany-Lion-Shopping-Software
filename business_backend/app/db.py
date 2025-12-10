@@ -51,7 +51,7 @@ def update_row(table, pk_name, pk_value, data):
 
 def insert_row(table, data):
     try:
-        conn = sqlite3.connect("your_database.db")
+        conn = get_db()
         cursor = conn.cursor()
 
         columns = ", ".join(data.keys())
@@ -70,6 +70,10 @@ def insert_row(table, data):
     except Exception as e:
         print("Insert error:", e)
         return None
+    
+    finally:
+        if conn:
+            conn.close()
     
 def delete_row(table, pk_name, pk_value):
     try:

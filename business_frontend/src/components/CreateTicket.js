@@ -2,46 +2,70 @@ import React, { useState } from "react";
 
 export default function CreateTicket({ onSubmit }) {
     const [formData, setFormData] = useState({
-        subject: "",
+        topic: "General",
         description: "",
-        category: "General",
         businessName: "",
         customerPhone: "",
         businessAddress: "",
     });
+    const [error, setError] = useState("");
+    const [success, setSuccess] = useState("");
 
     function handleChange(e) {
         const { name, value } = e.target;
         setFormData(prev => ({ ...prev, [name]: value }));
     }
 
-    function handleSubmit(e) {
+    async function handleSubmit(e) {
         e.preventDefault();
-        onSubmit?.(formData);
-        setFormData({
-            subject: "",
-            description: "",
-            category: "General",
-            businessName: "",
-            customerPhone: "",
-            businessAddress: "",
-        });
+        setError("");
+        setSuccess("");
+
+        try {
+            const res = await fetch("http://localhost:5000/tickets/create", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                    topic: formData.topic,
+                    description: formData.description,
+                    userEmail: localStorage.getItem("userEmail"),
+                    businessName: formData.businessName || null,
+                    customerPhone: formData.customerPhone || null,
+                    businessAddress: formData.businessAddress || null,
+                }),
+            });
+
+            const data = await res.json();
+
+            if (res.ok && data.success) {
+                setSuccess("Ticket created successfully!");
+                setFormData({
+                    topic: "General",
+                    description: "",
+                    businessName: "",
+                    customerPhone: "",
+                    businessAddress: "",
+                });
+                onSubmit?.(formData);
+            } else {
+                setError(data.error || "Failed to create ticket. Please try again.");
+            }
+        } catch (err) {
+            console.error("Ticket submission error:", err);
+            setError("Server error. Please try again later.");
+        }
     }
 
     return (
-        <div style={{ textAlign: "center" }}>
+                <div style={{ textAlign: "center" }}>
             <h2>Create Support Ticket</h2>
             <form onSubmit={handleSubmit}>
-                <input
-                    type="text"
-                    name="subject"
-                    placeholder="Ticket Subject"
-                    value={formData.subject}
+                <select
+                    name="topic"
+                    value={formData.topic}
                     onChange={handleChange}
                     required
-                />
-
-                <select name="category" value={formData.category} onChange={handleChange}>
+                >
                     <option>General</option>
                     <option>Register Business</option>
                     <option>Technical Issue</option>
@@ -49,8 +73,8 @@ export default function CreateTicket({ onSubmit }) {
                     <option>Order</option>
                 </select>
 
-                {/* Conditionally show extra fields */}
-                {formData.category === "Register Business" && (
+                {/* Extra business info only when Register Business is selected */}
+                {formData.topic === "Register Business" && (
                     <>
                         <input
                             type="text"
@@ -63,7 +87,7 @@ export default function CreateTicket({ onSubmit }) {
                         <input
                             type="tel"
                             name="customerPhone"
-                            placeholder="Customer Service Phone Number"
+                            placeholder="Customer Service Number"
                             value={formData.customerPhone}
                             onChange={handleChange}
                             required
@@ -73,7 +97,7 @@ export default function CreateTicket({ onSubmit }) {
                             name="businessAddress"
                             placeholder="Business Address"
                             value={formData.businessAddress}
-                                                        onChange={handleChange}
+                            onChange={handleChange}
                             required
                         />
                     </>
@@ -85,16 +109,14 @@ export default function CreateTicket({ onSubmit }) {
                     value={formData.description}
                     onChange={handleChange}
                     required
-                    style={{
-                        padding: "12px",
-                        borderRadius: "5px",
-                        border: "1px solid #ccc",
-                        resize: "vertical",
-                        minHeight: "100px",
-                    }}
                 />
 
-                <button type="submit" className="button">Submit Ticket</button>
+                <button type="submit" className="button">
+                    Submit Ticket
+                </button>
+
+                {error && <p className="error">{error}</p>}
+                {success && <p style={{ color: "green" }}>{success}</p>}
             </form>
         </div>
     );

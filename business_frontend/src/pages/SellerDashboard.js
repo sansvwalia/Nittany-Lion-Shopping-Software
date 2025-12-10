@@ -4,18 +4,40 @@ import Modal from "../components/Modal";
 import CreateTicket from "../components/CreateTicket";
 import CreateListing from "../components/CreateListing";
 import EditListing from "../components/EditListing";
+import DashboardSwitcher from "../components/DashboardSwitch";
 import "../App.css";
 
 export default function SellerDashboard() {
     const navigate = useNavigate();
+
+    useEffect(() => {
+        const checkAccess = async () => {
+            const email = localStorage.getItem("userEmail");
+            if (!email) {
+                navigate("/noselleraccess");
+                return;
+            }
+
+            try {
+                const res = await fetch(`http://localhost:5000/users/role/${email}`);
+                const data = await res.json();
+                if (data.role !== "seller" && data.role !== "helpdesk") {
+                    navigate("/noaccess");
+                }
+            } catch (err) {
+                console.error("Role check failed:", err);
+                navigate("/noaccess");
+            }
+        };
+
+        checkAccess();
+    }, [navigate]);
 
     const [products, setProducts] = useState([]);
     const [orders, setOrders] = useState([]);
     const [showTicketForm, setShowTicketForm] = useState(false);
     const [showListingForm, setShowListingForm] = useState(false);
     const [editingListing, setEditingListing] = useState(null);
-    const [showDeleteConfirm, setShowDeleteConfirm] = useState(false);
-    const [selectedListing, setSelectedListing] = useState(null);
 
     const userEmail = localStorage.getItem("userEmail");
 
@@ -46,10 +68,31 @@ export default function SellerDashboard() {
     }
 
     // Handle deletions (local until backend integrated)
-    function handleDeleteConfirmed() {
-        setProducts(prev => prev.filter(p => p.id !== selectedListing.id));
-        setShowDeleteConfirm(false);
+   async function handleDelete(id) {
+    if (!window.confirm("Are you sure you want to delete this product?")) return;
+
+    try {
+        const res = await fetch(`http://localhost:5000/products/delete/${id}`, {
+            method: "DELETE",
+        });
+
+        const data = await res.json();
+        if (res.ok && data.success) {
+            alert("Listing deleted successfully!");
+            setProducts(prev => prev.filter(prod => prod.ProductID !== id));
+        } else {
+            alert(data.error || "Failed to delete listing.");
+        }
+    } catch (err) {
+        console.error("Delete error:", err);
+        alert("Server error, please try again later.");
     }
+}
+
+    // function handleDeleteConfirmed() {
+    //     setProducts(prev => prev.filter(p => p.id !== selectedListing.id));
+    //     setShowDeleteConfirm(false);
+    // }
 
     return (
         <div className="App">
@@ -69,13 +112,10 @@ export default function SellerDashboard() {
                                         <button
                                             className="button"
                                             style={{ backgroundColor: "#b30000" }}
-                                            onClick={() => {
-                                                setSelectedListing(p);
-                                                setShowDeleteConfirm(true);
-                                            }}
+                                            onClick={() => handleDelete(p.ProductID)}
                                         >
                                             Delete
-                                        </button>
+                                    </button>
                                     </div>
                                 </div>
                             ))
@@ -160,25 +200,6 @@ export default function SellerDashboard() {
                     />
                 )}
             </Modal>
-            <Modal show={showDeleteConfirm} onClose={() => setShowDeleteConfirm(false)}>
-                <div style={{ textAlign: "center" }}>
-                    <h3>Confirm Deletion</h3>
-                    <p>
-                        Are you sure you want to delete{" "}
-                        <strong>{selectedListing?.Name}</strong>?
-                    </p>
-                    <button className="button" onClick={handleDeleteConfirmed}>
-                        Yes, Delete
-                    </button>
-                    <button
-                        className="button"
-                        style={{ backgroundColor: "#999", marginLeft: "10px" }}
-                        onClick={() => setShowDeleteConfirm(false)}
-                    >
-                        Cancel
-                    </button>
-                </div>
-            </Modal>
             <div
                 className="tooltip tooltip-left"
                 style={{ position: "fixed", bottom: "20px", left: "20px" }}
@@ -198,6 +219,7 @@ export default function SellerDashboard() {
                 </button>
                 <span className="tooltip-text">Sign Out</span>
             </div>
+            <DashboardSwitcher />
         </div>
     );
 }

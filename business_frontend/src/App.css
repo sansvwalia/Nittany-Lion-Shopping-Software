@@ -354,6 +354,23 @@ body {
     border-bottom: none;
 }
 
+/* Navigation */
+.nav-container {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin: 20px 0;
+    flex-wrap: wrap;
+}
+
+.nav-container .button {
+    min-width: 120px;
+}
+
+.tooltip {
+    transition: bottom 0.3s ease;
+}
+
 /* Logo Spin */
 @keyframes App-logo-spin {
     from {

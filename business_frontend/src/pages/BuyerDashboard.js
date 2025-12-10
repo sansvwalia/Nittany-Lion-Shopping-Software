@@ -1,5 +1,11 @@
 import { useState } from "react";
+import Navigation from "../components/Navigation";
+import { useNavigate } from "react-router-dom";
+import Modal from "../components/Modal";
+import CreateTicket from "../components/CreateTicket";
+import DashboardSwitcher from "../components/DashboardSwitch";
 import "../App.css";
+
 
 const orders = [
   { id: 1, item: "Laptop Sleeve", date: "2025-01-12", status: "Delivered" },
@@ -13,9 +19,12 @@ const recommendedProducts = [
 ];
 
 function BuyerDashboard() {
+  const navigate = useNavigate();
+  const [showTicketForm, setShowTicketForm] = useState(false);
   const [section, setSection] = useState("orders");
   const [cart, setCart] = useState([]);
   const [recommended] = useState(recommendedProducts);
+
 
   // Account local state
   const [account, setAccount] = useState({
@@ -48,16 +57,19 @@ function BuyerDashboard() {
     setShowEditModal(false);
   };
 
+  // Handle log out
+  function handleLogout() {
+        localStorage.removeItem("userToken");
+                sessionStorage.clear();
+        navigate("/");
+    }
+
+
   return (
     <div className="seller-content">
 
       {/* Navigation */}
-      <div className="button-container">
-        <button className="button" onClick={() => setSection("orders")}>Orders</button>
-        <button className="button" onClick={() => setSection("recommended")}>Recommended</button>
-        <button className="button" onClick={() => setSection("cart")}>Cart ({cart.length})</button>
-        <button className="button" onClick={() => setSection("account")}>Account</button>
-      </div>
+      <Navigation setSection={setSection} cartCount={cart.length} />
 
       {/* Orders */}
       {section === "orders" && (
@@ -170,6 +182,50 @@ function BuyerDashboard() {
         </div>
       )}
 
+      {/* Contact Helpdesk */}
+      <div
+                className="tooltip"
+                style={{ position: "fixed", bottom: "20px", right: "20px" }}
+            >
+                <button
+                    className="button"
+                    style={{
+                        borderRadius: "50%",
+                        width: "60px",
+                        height: "60px",
+                        fontSize: "1.5em",
+                    }}
+                    onClick={() => setShowTicketForm(true)}
+                >
+                    ?
+                </button>
+                <span className="tooltip-text">Contact Helpdesk</span>
+            </div>
+             <Modal show={showTicketForm} onClose={() => setShowTicketForm(false)}>
+                    <CreateTicket onSubmit={() => setShowTicketForm(false)} />
+             </Modal>
+
+      {/* Sign out - moved below modal so it’s always visible */}
+        <div
+        className="tooltip tooltip-left"
+        style={{ position: "fixed", bottom: "20px", left: "20px" }}
+        >
+        <button
+            className="button"
+            style={{
+            borderRadius: "50%",
+            width: "60px",
+            height: "60px",
+            fontSize: "1.3em",
+            backgroundColor: "#b30000",
+            }}
+            onClick={handleLogout}
+        >
+            ↩
+        </button>
+        <span className="tooltip-text">Sign Out</span>
+        </div>
+        <DashboardSwitcher />
     </div>
   );
 }

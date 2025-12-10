@@ -17,8 +17,15 @@ const Login = () => {
         try {
             const res = await axios.post(`${API_BASE_URL}/login`, { email, password });
 
+<<<<<<< HEAD
             if (res.data.status === "success") {
                 const role = res.data.role;
+=======
+        if (data.success) {
+            localStorage.setItem("userToken", data.token);
+            localStorage.setItem("userEmail", email);
+            localStorage.setItem("userRole", data.role);
+>>>>>>> 8177e2620d93dc3e778454957fdc071ac33fbcd3
 
                 // Navigate based on role
                 if (role === "buyer") {

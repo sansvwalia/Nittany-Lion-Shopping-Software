@@ -62,7 +62,25 @@ def get_columns(table):
 
     return jsonify({"columns": columns})
 
-@generic_bp.get("/tables")
+@generic_bp.route("/tables")
 def list_tables():
-    tables = get_tables()
+    # Mapping between SQL table names and blueprint route prefixes
+    tables = [
+        {"label": "Category",        "route": "category"},
+        {"label": "Zipcode Info",    "route": "zipcode"},        # Zipcode_Info table
+        {"label": "Address",         "route": "address"},
+        {"label": "Tag",             "route": "tag"},
+        {"label": "Registered User", "route": "users"},          # Registered_User table
+        {"label": "Business",        "route": "business"},
+        {"label": "Buyer",           "route": "buyer_table"},    # Buyer table
+        {"label": "Help Desk",       "route": "helpdesk_table"}, # Help_Desk table
+        {"label": "Transactions",    "route": "transaction"},
+        {"label": "Credit Cards",    "route": "creditcards"},
+        {"label": "Product",         "route": "products"},
+        {"label": "Seller",          "route": "sellers"},
+        {"label": "Ticket",          "route": "tickets"},
+        {"label": "Orders",          "route": "orders"},
+        {"label": "Review",          "route": "review"},
+    ]
+
     return jsonify({"tables": tables})
