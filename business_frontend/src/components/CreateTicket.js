@@ -57,7 +57,7 @@ export default function CreateTicket({ onSubmit }) {
     }
 
     return (
-                <div style={{ textAlign: "center" }}>
+            <div style={{ textAlign: "center" }}>
             <h2>Create Support Ticket</h2>
             <form onSubmit={handleSubmit}>
                 <select
